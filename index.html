@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Happy Birthday Arsya Surya Sanjaya</title>
 
@@ -13,330 +14,496 @@
 
 html,body{
   margin:0;
+  padding:0;
   width:100%;
-  height:100%;
-  overflow:hidden;
-  font-family:Georgia,serif;
+  min-height:100%;
 }
 
 body{
-  background:linear-gradient(135deg,#7b2b91,#c45bd3,#8c3fa5);
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  background:
+    radial-gradient(circle at top,#c86be2 0%,#8c35a7 45%,#54206f 100%);
+  font-family:Georgia,"Times New Roman",serif;
+  overflow-x:hidden;
   color:#8d176d;
 }
 
-/* KARTU UTAMA */
-.card{
+/* PANEL UTAMA */
+.page{
+  width:min(92vw,760px);
+  min-height:100vh;
+  margin:0 auto;
+  padding:28px 22px 35px;
   position:relative;
-  width:92vw;
-  height:96vh;
-  max-width:620px;
-  background:linear-gradient(180deg,#ffd4ec,#f7afd8);
-  border:3px solid rgba(255,255,255,.8);
-  border-radius:30px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffd9ef 0%,
+      #ffc8e7 45%,
+      #f6afd9 100%
+    );
+
+  border-left:3px solid rgba(255,255,255,.75);
+  border-right:3px solid rgba(255,255,255,.75);
   box-shadow:
-    0 0 25px rgba(255,255,255,.55),
-    inset 0 0 20px rgba(255,255,255,.35);
-  text-align:center;
-  overflow:hidden;
-  padding:18px 18px;
+    0 0 35px rgba(255,105,210,.45),
+    inset 0 0 35px rgba(255,255,255,.25);
+}
+
+/* SUDUT PANEL */
+.page:before{
+  content:"";
+  position:absolute;
+  inset:8px;
+  border:2px solid rgba(255,255,255,.7);
+  border-radius:30px;
+  pointer-events:none;
 }
 
 /* DEKORASI */
-.sparkle{
+.decor{
   position:absolute;
   color:white;
-  font-size:24px;
   opacity:.85;
+  font-size:35px;
+  z-index:2;
 }
 
-.s1{top:45px;left:20px;}
-.s2{top:80px;right:22px;}
-.s3{bottom:45px;left:25px;}
-.s4{bottom:75px;right:20px;}
+.d1{left:-25px;top:45px;}
+.d2{right:-28px;top:120px;}
+.d3{left:-20px;bottom:190px;}
+.d4{right:-22px;bottom:90px;}
 
-.top{
-  font-size:13px;
+/* PITA ATAS */
+.bow{
+  position:relative;
+  width:190px;
+  height:70px;
+  margin:0 auto 5px;
+  z-index:5;
+}
+
+.bow:before,
+.bow:after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:85px;
+  height:55px;
+  background:linear-gradient(135deg,#e94baf,#9b218f);
+  border-radius:60% 15% 60% 15%;
+  box-shadow:0 5px 12px rgba(120,20,100,.25);
+}
+
+.bow:before{
+  left:5px;
+  transform:rotate(-18deg);
+}
+
+.bow:after{
+  right:5px;
+  transform:rotate(18deg) scaleX(-1);
+}
+
+.bow-center{
+  position:absolute;
+  left:50%;
+  top:8px;
+  transform:translateX(-50%);
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:radial-gradient(circle,#ffb9e9,#d52a9f);
+  border:3px solid white;
+  box-shadow:0 4px 12px rgba(130,0,100,.3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:27px;
+}
+
+/* SUB JUDUL */
+.top-title{
+  text-align:center;
+  font-size:18px;
   letter-spacing:7px;
-  margin-top:5px;
-  color:#8d176d;
   font-weight:bold;
-}
-
-/* PITA */
-.ribbon{
-  font-size:55px;
-  line-height:45px;
-  margin-top:-3px;
+  margin-top:5px;
+  color:#a72a80;
 }
 
 /* JUDUL */
 h1{
-  margin:4px 0 0;
-  font-size:clamp(43px,11vw,72px);
-  line-height:.88;
-  color:#c51f82;
+  margin:15px 0 0;
+  text-align:center;
+  font-size:clamp(55px,12vw,105px);
+  line-height:.85;
+  color:#c3228c;
   text-shadow:
-    2px 3px 0 #fff,
-    0 5px 10px rgba(120,0,80,.18);
+    2px 3px 0 #f48bc9,
+    0 5px 15px rgba(150,20,110,.25);
 }
 
 .name{
-  margin-top:12px;
-  font-size:clamp(19px,5vw,30px);
+  text-align:center;
+  margin-top:18px;
+  font-size:clamp(25px,5vw,42px);
   font-weight:bold;
-  color:#64256f;
+  color:#63317d;
 }
 
 /* KUE */
 .cake-area{
-  margin-top:8px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  position:relative;
+  width:100%;
+  margin:25px auto 0;
+  text-align:center;
 }
 
 .cake{
   position:relative;
-  width:min(280px,55vw);
-  height:min(155px,30vw);
-  margin-top:42px;
-  background:linear-gradient(#fff4ff 0 25%,#ffb5dd 26% 72%,#e98ac7 73%);
-  border-radius:18px 18px 35px 35px;
-  box-shadow:
-    inset 0 -12px 0 rgba(170,60,150,.15),
-    0 10px 15px rgba(130,40,120,.2);
-  cursor:pointer;
+  width:min(78vw,440px);
+  height:270px;
+  margin:auto;
+}
+
+/* BADAN KUE */
+.cake-body{
+  position:absolute;
+  left:50%;
+  bottom:15px;
+  transform:translateX(-50%);
+  width:82%;
+  height:145px;
+  border-radius:25px 25px 35px 35px;
+  background:
+    linear-gradient(
+      180deg,
+      #fff8fc 0%,
+      #ffc1e2 38%,
+      #f486c8 39%,
+      #ed5eb4 72%,
+      #c53a9f 73%
+    );
+  box-shadow:0 12px 20px rgba(120,30,100,.2);
+  border:3px solid white;
 }
 
 /* KRIM */
-.cake:before{
-  content:"";
+.cream{
   position:absolute;
-  left:0;
-  right:0;
-  top:28px;
-  height:25px;
-  background:
-    radial-gradient(circle at 10px 0,#fff 12px,transparent 13px)
-    repeat-x;
-  background-size:38px 30px;
+  left:50%;
+  top:0;
+  transform:translateX(-50%);
+  width:90%;
+  height:52px;
+  border-radius:50%;
+  background:#fff8ff;
+  border:3px solid white;
+  box-shadow:0 5px 10px rgba(130,20,100,.15);
 }
 
-/* Hiasan */
-.cake:after{
-  content:"♥  ♥  ♥  ♥  ♥";
+/* TABURAN */
+.sprinkles{
   position:absolute;
+  top:20px;
   left:0;
-  right:0;
-  bottom:25px;
-  color:#d52a9b;
-  font-size:19px;
-  letter-spacing:10px;
+  width:100%;
+  font-size:30px;
+  letter-spacing:8px;
 }
 
 /* LILIN */
 .candle{
   position:absolute;
   left:50%;
-  top:-58px;
+  top:-82px;
   transform:translateX(-50%);
-  width:23px;
-  height:63px;
-  border-radius:5px;
+  width:34px;
+  height:90px;
+  border-radius:7px;
   background:repeating-linear-gradient(
-    -45deg,
-    #ff66bb 0 8px,
-    #fff 8px 15px
+    45deg,
+    #ff8ccc 0px,
+    #ff8ccc 10px,
+    white 10px,
+    white 20px
   );
+  border:2px solid #fff;
   cursor:pointer;
-  z-index:5;
+  z-index:10;
+  box-shadow:0 3px 8px rgba(120,20,100,.2);
 }
 
+/* API */
 .flame{
   position:absolute;
+  top:-38px;
   left:50%;
-  top:-27px;
   transform:translateX(-50%);
-  width:20px;
-  height:29px;
-  background:#ffb21c;
+  width:25px;
+  height:38px;
+  background:#ffb300;
   border-radius:50% 50% 50% 50%;
-  box-shadow:0 0 15px #ff8c00;
-  animation:flicker .35s infinite alternate;
+  box-shadow:0 0 15px #ff9d00;
+  animation:flicker .6s infinite alternate;
 }
 
-.flame:after{
-  content:"";
-  position:absolute;
-  width:8px;
-  height:13px;
-  background:#fff7a8;
-  border-radius:50%;
-  left:6px;
-  top:8px;
+@keyframes flicker{
+  from{transform:translateX(-50%) scale(.9);}
+  to{transform:translateX(-50%) scale(1.1);}
 }
 
 .flame.off{
   display:none;
 }
 
-@keyframes flicker{
-  from{transform:translateX(-50%) scale(1);}
-  to{transform:translateX(-50%) scale(1.12);}
-}
-
 /* ANGKA 19 */
-.age{
-  margin-top:5px;
-  font-size:clamp(65px,17vw,110px);
+.number{
+  text-align:center;
+  font-size:clamp(100px,23vw,190px);
   line-height:.8;
-  color:#ef72b8;
   font-weight:bold;
+  color:#ed65b6;
   text-shadow:
-    2px 3px 0 white,
-    0 5px 10px rgba(150,30,110,.2);
+    3px 4px 0 #ffb8df,
+    0 5px 12px rgba(130,20,100,.2);
+  margin-top:0;
 }
 
 .instruction{
+  text-align:center;
   margin-top:5px;
-  font-size:14px;
-  color:#77306e;
+  font-size:20px;
   font-weight:bold;
+  color:#8c3c82;
 }
 
-/* PEMBATAS */
-.divider{
+/* PEMISAH */
+.separator{
   display:flex;
-  align-items:center;
   justify-content:center;
-  gap:12px;
-  margin:8px auto;
-  color:#a51b78;
+  align-items:center;
+  gap:25px;
+  margin:15px 0;
 }
 
-.divider span{
-  width:65px;
-  height:2px;
-  background:#c75b9e;
+.separator span{
+  width:80px;
+  height:3px;
+  background:#b43b8d;
 }
 
+.separator b{
+  font-size:27px;
+  color:#a32679;
+}
+
+/* TEKS */
 .special{
-  font-size:17px;
+  text-align:center;
   color:white;
+  font-size:clamp(22px,4.5vw,32px);
   font-weight:bold;
-  text-shadow:0 2px 4px rgba(100,0,70,.2);
+  text-shadow:0 2px 5px rgba(100,20,80,.3);
+  margin:5px 0 10px;
 }
 
 /* KADO */
 .gift{
-  font-size:clamp(65px,18vw,105px);
-  line-height:.85;
-  margin-top:3px;
-  filter:drop-shadow(0 8px 8px rgba(100,0,80,.18));
+  width:150px;
+  height:125px;
+  margin:0 auto 12px;
+  position:relative;
+  cursor:pointer;
+  transition:.3s;
 }
 
-/* TOMBOL */
-.button{
-  display:inline-block;
-  margin-top:7px;
-  padding:12px 28px;
-  border-radius:30px;
-  background:linear-gradient(90deg,#ec38a7,#a932d0);
-  color:white;
-  text-decoration:none;
-  font-size:19px;
-  font-weight:bold;
-  box-shadow:
-    0 7px 15px rgba(130,20,130,.25),
-    inset 0 1px 2px rgba(255,255,255,.5);
+.gift:hover{
+  transform:scale(1.05);
 }
 
-.small{
-  margin-top:6px;
-  font-size:12px;
-  color:#8d176d;
-  font-weight:bold;
+.gift-box{
+  position:absolute;
+  left:10px;
+  right:10px;
+  bottom:0;
+  height:90px;
+  background:linear-gradient(90deg,#f25ab5,#b832a0);
+  border:3px solid #ffb6e2;
+  border-radius:5px;
+  box-shadow:0 8px 15px rgba(100,20,100,.2);
 }
 
-/* BALON & LOVE */
-.floating{
-  position:fixed;
-  bottom:-80px;
-  z-index:100;
-  pointer-events:none;
-  animation:rise 5s linear forwards;
+.gift-lid{
+  position:absolute;
+  left:0;
+  top:22px;
+  width:150px;
+  height:32px;
+  background:linear-gradient(90deg,#ff79c8,#c03a9f);
+  border-radius:6px;
+  z-index:3;
 }
 
-.balloon{
+.ribbon-v{
+  position:absolute;
+  width:25px;
+  height:100%;
+  left:50%;
+  transform:translateX(-50%);
+  background:#ffd2ed;
+}
+
+.ribbon-h{
+  position:absolute;
+  left:0;
+  top:4px;
+  width:100%;
+  height:23px;
+  background:#ffd2ed;
+  z-index:4;
+}
+
+.ribbon{
+  position:absolute;
+  top:-8px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:5;
   font-size:42px;
 }
 
-.love{
-  font-size:32px;
+/* TOMBOL */
+.open{
+  display:block;
+  width:min(80vw,350px);
+  margin:0 auto;
+  padding:16px 25px;
+  border-radius:40px;
+  text-align:center;
+  text-decoration:none;
   color:white;
-  text-shadow:0 2px 8px rgba(255,255,255,.7);
+  font-size:24px;
+  font-weight:bold;
+
+  background:linear-gradient(90deg,#ee3fb0,#a83ad1);
+
+  box-shadow:
+    0 8px 20px rgba(130,20,130,.35),
+    inset 0 2px 2px rgba(255,255,255,.4);
+
+  transition:.25s;
+}
+
+.open:active{
+  transform:scale(.96);
+}
+
+.footer{
+  text-align:center;
+  margin-top:18px;
+  color:#a52b7f;
+  font-size:18px;
+}
+
+/* BALON */
+.balloon{
+  position:fixed;
+  bottom:-100px;
+  width:45px;
+  height:58px;
+  border-radius:50%;
+  z-index:9999;
+  animation:rise 5s linear forwards;
+}
+
+.balloon:after{
+  content:"";
+  position:absolute;
+  width:1px;
+  height:70px;
+  background:#777;
+  top:55px;
+  left:50%;
 }
 
 @keyframes rise{
   0%{
-    transform:translateY(0) translateX(0) rotate(0);
-    opacity:0;
+    transform:translateY(0) rotate(0deg);
+    opacity:1;
   }
-  10%{opacity:1;}
   100%{
-    transform:translateY(-115vh) translateX(var(--move)) rotate(15deg);
+    transform:translateY(-120vh) rotate(18deg);
     opacity:0;
   }
 }
 
-/* UNTUK HP KECIL */
-@media(max-height:700px){
-  .card{
-    height:94vh;
-    padding-top:12px;
+/* LOVE */
+.love{
+  position:fixed;
+  bottom:-50px;
+  z-index:9998;
+  font-size:35px;
+  animation:loveRise 4s ease-out forwards;
+  pointer-events:none;
+}
+
+@keyframes loveRise{
+  0%{
+    transform:translateY(0) scale(.7);
+    opacity:1;
+  }
+  100%{
+    transform:translateY(-110vh) scale(1.3);
+    opacity:0;
+  }
+}
+
+/* MOBILE */
+@media(max-width:500px){
+
+  .page{
+    width:92vw;
+    padding:20px 12px 25px;
   }
 
-  .top{
-    font-size:10px;
-  }
-
-  .ribbon{
-    font-size:42px;
+  .top-title{
+    font-size:12px;
+    letter-spacing:4px;
   }
 
   h1{
-    font-size:43px;
+    font-size:58px;
   }
 
   .name{
-    font-size:18px;
-    margin-top:8px;
+    font-size:24px;
   }
 
   .cake{
-    width:210px;
-    height:115px;
-    margin-top:35px;
+    transform:scale(.88);
+    transform-origin:top center;
+    margin-bottom:-30px;
   }
 
-  .age{
-    font-size:70px;
+  .number{
+    font-size:120px;
   }
 
   .special{
-    font-size:14px;
+    font-size:22px;
   }
 
   .gift{
-    font-size:65px;
+    transform:scale(.85);
+    margin-top:-5px;
+    margin-bottom:-5px;
   }
 
-  .button{
-    font-size:16px;
-    padding:10px 23px;
+  .open{
+    font-size:20px;
+    padding:14px 20px;
   }
 }
 </style>
@@ -344,18 +511,25 @@ h1{
 
 <body>
 
-<div class="card">
+<div class="page">
 
-  <div class="sparkle s1">♡</div>
-  <div class="sparkle s2">✦</div>
-  <div class="sparkle s3">♡</div>
-  <div class="sparkle s4">✦</div>
+  <div class="decor d1">♡</div>
+  <div class="decor d2">✦</div>
+  <div class="decor d3">♡</div>
+  <div class="decor d4">✦</div>
 
-  <div class="top">♥ A LITTLE BIRTHDAY GIFT ♥</div>
+  <div class="bow">
+    <div class="bow-center">♥</div>
+  </div>
 
-  <div class="ribbon">🎀</div>
+  <div class="top-title">
+    ♥ A LITTLE BIRTHDAY GIFT ♥
+  </div>
 
-  <h1>Happy<br>Birthday</h1>
+  <h1>
+    Happy<br>
+    Birthday
+  </h1>
 
   <div class="name">
     Arsya Surya Sanjaya
@@ -363,39 +537,71 @@ h1{
 
   <div class="cake-area">
 
-    <div class="cake" id="cake">
+    <div class="cake">
 
-      <div class="candle" id="candle">
+      <div
+        class="candle"
+        id="candle"
+        onclick="blowCandle()"
+        title="Tekan lilinnya"
+      >
         <div class="flame" id="flame"></div>
+      </div>
+
+      <div class="cake-body">
+        <div class="cream"></div>
+
+        <div class="sprinkles">
+          🍓 🩷 🍓 🩷 🍓
+        </div>
       </div>
 
     </div>
 
-    <div class="age">19</div>
-
-    <div class="instruction">
-      Tekan lilinnya 🕯️
-    </div>
-
   </div>
 
-  <div class="divider">
+  <div class="number">
+    19
+  </div>
+
+  <div class="instruction">
+    Tekan lilinnya 🕯️
+  </div>
+
+  <div class="separator">
     <span></span>
-    ♥
+    <b>♥</b>
     <span></span>
   </div>
 
   <div class="special">
-    Untuk seseorang yang spesial 🤍
+    Untuk seseorang yang<br>
+    spesial 🤍
   </div>
 
-  <div class="gift">🎁</div>
+  <!-- KADO -->
+  <div class="gift">
 
-  <a class="button" href="public/gift.html">
+    <div class="gift-lid">
+      <div class="ribbon-h"></div>
+    </div>
+
+    <div class="gift-box">
+      <div class="ribbon-v"></div>
+    </div>
+
+    <div class="ribbon">
+      🎀
+    </div>
+
+  </div>
+
+  <!-- MENUJU VIDEO -->
+  <a class="open" href="public/gift.html">
     🎁 &nbsp; Buka Hadiah
   </a>
 
-  <div class="small">
+  <div class="footer">
     Ada sesuatu yang spesial untukmu ♥
   </div>
 
@@ -403,158 +609,114 @@ h1{
 
 <script>
 
-/* =========================
-   MUSIK HAPPY BIRTHDAY
-========================= */
+let candlePressed = false;
 
-let musicStarted = false;
+function blowCandle(){
 
-function playBirthdayMusic(){
+  if(candlePressed) return;
 
-  if(musicStarted) return;
+  candlePressed = true;
 
-  musicStarted = true;
+  // Matikan api
+  document.getElementById("flame").classList.add("off");
 
-  const AudioContext =
-    window.AudioContext ||
-    window.webkitAudioContext;
-
-  if(!AudioContext) return;
-
-  const ctx = new AudioContext();
-
-  const notes = [
-    264,264,297,264,352,330,
-    264,264,297,264,396,352,
-    264,264,528,440,352,330,297,
-    466,466,440,352,396,352
+  // BALON
+  const balloonColors=[
+    "#ff4fa3",
+    "#b85cff",
+    "#ff8ad8",
+    "#8e63ff",
+    "#ff5d7d",
+    "#d86cff"
   ];
 
-  let time = ctx.currentTime;
+  for(let i=0;i<18;i++){
 
-  notes.forEach((freq,i)=>{
+    setTimeout(function(){
 
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
+      const balloon=document.createElement("div");
 
-    osc.type = "sine";
-    osc.frequency.value = freq;
+      balloon.className="balloon";
 
-    gain.gain.setValueAtTime(.0001,time);
-    gain.gain.exponentialRampToValueAtTime(.18,time+.03);
-    gain.gain.exponentialRampToValueAtTime(.0001,time+.42);
+      balloon.style.left=(Math.random()*90+3)+"%";
 
-    osc.connect(gain);
-    gain.connect(ctx.destination);
+      balloon.style.background=
+        balloonColors[
+          Math.floor(Math.random()*balloonColors.length)
+        ];
 
-    osc.start(time);
-    osc.stop(time+.45);
+      balloon.style.animationDuration=
+        (4+Math.random()*3)+"s";
 
-    time += .45;
-  });
-}
+      document.body.appendChild(balloon);
 
+      setTimeout(()=>{
+        balloon.remove();
+      },7500);
 
-/* =========================
-   BALON
-========================= */
-
-function createBalloon(){
-
-  const item = document.createElement("div");
-
-  item.className = "floating balloon";
-
-  const balloons = [
-    "🎈","🎈","🎈","🎈","🎈"
-  ];
-
-  item.textContent =
-    balloons[Math.floor(Math.random()*balloons.length)];
-
-  item.style.left =
-    Math.random()*100 + "vw";
-
-  item.style.setProperty(
-    "--move",
-    (Math.random()*180-90) + "px"
-  );
-
-  item.style.animationDuration =
-    (4 + Math.random()*3) + "s";
-
-  document.body.appendChild(item);
-
-  setTimeout(()=>{
-    item.remove();
-  },7000);
-}
-
-
-/* =========================
-   LOVE PUTIH
-========================= */
-
-function createLove(){
-
-  const item = document.createElement("div");
-
-  item.className = "floating love";
-  item.textContent = "🤍";
-
-  item.style.left =
-    Math.random()*100 + "vw";
-
-  item.style.setProperty(
-    "--move",
-    (Math.random()*180-90) + "px"
-  );
-
-  item.style.animationDuration =
-    (4 + Math.random()*3) + "s";
-
-  document.body.appendChild(item);
-
-  setTimeout(()=>{
-    item.remove();
-  },7000);
-}
-
-
-/* =========================
-   KETIKA LILIN DITEKAN
-========================= */
-
-document.getElementById("candle").addEventListener("click",function(e){
-
-  e.stopPropagation();
-
-  /* matikan api */
-  document.getElementById("flame")
-    .classList.add("off");
-
-  /* musik */
-  playBirthdayMusic();
-
-  /* balon */
-  for(let i=0;i<14;i++){
-
-    setTimeout(()=>{
-      createBalloon();
-    },i*180);
+    },i*120);
 
   }
 
-  /* love putih */
-  for(let i=0;i<12;i++){
+  // LOVE PUTIH
+  for(let i=0;i<15;i++){
 
-    setTimeout(()=>{
-      createLove();
-    },i*230);
+    setTimeout(function(){
+
+      const love=document.createElement("div");
+
+      love.className="love";
+      love.innerHTML="🤍";
+
+      love.style.left=(Math.random()*90+3)+"%";
+
+      love.style.animationDuration=
+        (3+Math.random()*2)+"s";
+
+      document.body.appendChild(love);
+
+      setTimeout(()=>{
+        love.remove();
+      },6000);
+
+    },i*160);
 
   }
 
-});
+  // efek tambahan
+  for(let i=0;i<20;i++){
+
+    setTimeout(function(){
+
+      const spark=document.createElement("div");
+
+      spark.innerHTML="✦";
+      spark.style.position="fixed";
+      spark.style.left=(Math.random()*100)+"%";
+      spark.style.bottom="-30px";
+      spark.style.fontSize="25px";
+      spark.style.color="#fff";
+      spark.style.zIndex="9999";
+      spark.style.pointerEvents="none";
+      spark.style.transition="4s ease-out";
+
+      document.body.appendChild(spark);
+
+      setTimeout(()=>{
+        spark.style.transform=
+          "translateY(-100vh) rotate(360deg)";
+        spark.style.opacity="0";
+      },50);
+
+      setTimeout(()=>{
+        spark.remove();
+      },4500);
+
+    },i*100);
+
+  }
+
+}
 
 </script>
 
