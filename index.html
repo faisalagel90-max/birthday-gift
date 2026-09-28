@@ -229,26 +229,37 @@ function mainkanHappyBirthday() {
         B: 493.88
     };
 
+    /* 🎵 Happy Birthday - versi lebih ceria */
     const lagu = [
-        ["G",0.4],["G",0.4],["A",0.8],["G",0.8],["C",0.8],["B",1.2],
-        ["G",0.4],["G",0.4],["A",0.8],["G",0.8],["D",0.8],["C",1.2],
-        ["G",0.4],["G",0.4],["G",0.8],["E",0.8],["C",0.8],["B",0.8],["A",1.2],
-        ["F",0.4],["F",0.4],["E",0.8],["C",0.8],["D",0.8],["C",1.5]
+        ["G",0.28],["G",0.28],["A",0.50],["G",0.50],["C",0.50],["B",0.70],
+
+        ["G",0.28],["G",0.28],["A",0.50],["G",0.50],["D",0.50],["C",0.70],
+
+        ["G",0.28],["G",0.28],["G",0.50],["E",0.50],["C",0.50],["B",0.50],["A",0.70],
+
+        ["F",0.28],["F",0.28],["E",0.50],["C",0.50],["D",0.50],["C",1.00]
     ];
 
     let waktu = audio.currentTime;
 
     lagu.forEach(([n, durasi]) => {
 
+        /* Nada utama */
         const oscillator = audio.createOscillator();
         const gain = audio.createGain();
 
-        oscillator.type = "sine";
+        oscillator.type = "triangle";
         oscillator.frequency.value = nada[n];
 
         gain.gain.setValueAtTime(0.0001, waktu);
-        gain.gain.exponentialRampToValueAtTime(0.18, waktu + 0.03);
-        gain.gain.exponentialRampToValueAtTime(0.0001, waktu + durasi - 0.03);
+        gain.gain.exponentialRampToValueAtTime(
+            0.22,
+            waktu + 0.02
+        );
+        gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            waktu + durasi - 0.03
+        );
 
         oscillator.connect(gain);
         gain.connect(audio.destination);
@@ -256,9 +267,32 @@ function mainkanHappyBirthday() {
         oscillator.start(waktu);
         oscillator.stop(waktu + durasi);
 
+        /* ✨ Harmoni ringan */
+        const harmony = audio.createOscillator();
+        const harmonyGain = audio.createGain();
+
+        harmony.type = "sine";
+        harmony.frequency.value = nada[n] * 2;
+
+        harmonyGain.gain.setValueAtTime(0.0001, waktu);
+        harmonyGain.gain.exponentialRampToValueAtTime(
+            0.06,
+            waktu + 0.02
+        );
+        harmonyGain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            waktu + durasi - 0.03
+        );
+
+        harmony.connect(harmonyGain);
+        harmonyGain.connect(audio.destination);
+
+        harmony.start(waktu);
+        harmony.stop(waktu + durasi);
+
         waktu += durasi;
     });
-}
+  }
 </script>
 
 </body>
