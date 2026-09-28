@@ -1,31 +1,650 @@
-<!-- BIRTHDAY SCENE -->
-<div id="birthdayScene">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
 
-  <!-- Dekorasi luar -->
-  <div class="decor-heart heart-1">♡</div>
-  <div class="decor-heart heart-2">♡</div>
-  <div class="decor-star star-1">✦</div>
-  <div class="decor-star star-2">✦</div>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-  <!-- PANEL PINK -->
-  <div class="birthday-card">
+<title>Happy Birthday Arsya</title>
 
-    <div class="top-label">
-      ♥ A LITTLE BIRTHDAY GIFT ♥
+<style>
+
+/* =========================
+   DASAR HALAMAN
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #663c51 0%,
+      #4c293c 60%,
+      #351c2c 100%
+    );
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+
+/* =========================
+   HALAMAN
+========================= */
+
+.page {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+
+/* =========================
+   KARTU
+========================= */
+
+.card {
+
+  position: relative;
+
+  width: min(88vw, 610px);
+  height: 94vh;
+
+  overflow: hidden;
+
+  border-radius: 32px;
+
+  border: 3px solid rgba(255,255,255,.22);
+
+  background:
+    linear-gradient(
+      180deg,
+      #5b3448 0%,
+      #583247 100%
+    );
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,.25);
+
+  text-align: center;
+
+  color: white;
+
+  padding:
+    42px
+    30px
+    25px;
+
+}
+
+
+/* =========================
+   DEKORASI
+========================= */
+
+.decor {
+  position: absolute;
+
+  color: rgba(238,150,193,.18);
+
+  font-size: 45px;
+
+  pointer-events: none;
+}
+
+.decor.one {
+  left: 8px;
+  top: -5px;
+}
+
+.decor.two {
+  right: 10px;
+  bottom: 15px;
+}
+
+.decor.three {
+  right: 25px;
+  top: 100px;
+  font-size: 25px;
+}
+
+
+/* =========================
+   JUDUL ATAS
+========================= */
+
+.small-title {
+
+  font-size: 17px;
+
+  letter-spacing: 6px;
+
+  color: #e8a5c2;
+
+  margin-bottom: 35px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   HAPPY BIRTHDAY
+========================= */
+
+.main-title {
+
+  font-size:
+    clamp(58px, 14vw, 95px);
+
+  line-height: .83;
+
+  font-weight: normal;
+
+  color: #ffffff;
+
+  margin: 0;
+
+  text-shadow:
+    0 3px 5px rgba(0,0,0,.12);
+}
+
+
+/* =========================
+   NAMA
+========================= */
+
+.name {
+
+  font-size:
+    clamp(20px, 5vw, 31px);
+
+  color: #ffffff;
+
+  margin-top: 15px;
+
+  line-height: 1.1;
+}
+
+
+/* =========================
+   ANGKA 19
+========================= */
+
+.age {
+
+  font-size:
+    clamp(105px, 28vw, 175px);
+
+  line-height: .85;
+
+  color: #ef9bc2;
+
+  font-weight: normal;
+
+  margin-top: 10px;
+
+  text-shadow:
+    0 4px 12px rgba(239,155,194,.22);
+}
+
+
+/* =========================
+   KUE
+   UKURAN MIRIP ANGKA 19
+========================= */
+
+.cake-area {
+
+  position: relative;
+
+  width:
+    clamp(120px, 32vw, 175px);
+
+  height:
+    clamp(105px, 27vw, 155px);
+
+  margin:
+    4px auto 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  cursor: pointer;
+
+  z-index: 20;
+}
+
+
+.cake {
+
+  font-size:
+    clamp(95px, 25vw, 150px);
+
+  line-height: 1;
+
+  transition:
+    transform .2s ease;
+
+  filter:
+    drop-shadow(
+      0 7px 8px rgba(0,0,0,.18)
+    );
+}
+
+
+.cake-area:active .cake {
+
+  transform:
+    scale(1.08);
+}
+
+
+/* =========================
+   LILIN
+========================= */
+
+.candle {
+
+  position: absolute;
+
+  z-index: 30;
+
+  left: 50%;
+
+  top: -3px;
+
+  transform:
+    translateX(-50%);
+
+  font-size:
+    clamp(35px, 10vw, 52px);
+
+  cursor: pointer;
+
+  transition:
+    opacity .3s ease,
+    transform .2s ease;
+}
+
+
+.candle.off {
+
+  opacity: .25;
+
+  transform:
+    translateX(-50%)
+    scale(.8);
+}
+
+
+.instruction {
+
+  font-size: 14px;
+
+  color: #e8a5c2;
+
+  margin-top: 2px;
+}
+
+
+/* =========================
+   GARIS
+========================= */
+
+.line {
+
+  width: 150px;
+
+  height: 2px;
+
+  background: #e8a5c2;
+
+  margin:
+    12px auto 10px;
+}
+
+
+/* =========================
+   TEKS CONTOH
+========================= */
+
+.special {
+
+  font-size:
+    clamp(20px, 5vw, 30px);
+
+  line-height: 1.1;
+
+  margin-top: 2px;
+
+  color: white;
+}
+
+
+/* =========================
+   KADO
+========================= */
+
+.gift-area {
+
+  margin-top: 5px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+.gift {
+
+  font-size:
+    clamp(75px, 20vw, 120px);
+
+  line-height: .9;
+
+  filter:
+    drop-shadow(
+      0 6px 7px rgba(0,0,0,.18)
+    );
+}
+
+
+.gift-button {
+
+  display: inline-block;
+
+  margin-top: 4px;
+
+  padding:
+    9px 23px;
+
+  border-radius: 25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ef9bc2,
+      #c56fa2
+    );
+
+  color: white;
+
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,.18);
+}
+
+
+.gift-button:active {
+
+  transform:
+    scale(.96);
+}
+
+
+/* =========================
+   BALON
+========================= */
+
+.balloon {
+
+  position: absolute;
+
+  bottom: -80px;
+
+  font-size: 40px;
+
+  z-index: 50;
+
+  pointer-events: none;
+
+  animation:
+    balloonFly
+    linear
+    forwards;
+}
+
+
+@keyframes balloonFly {
+
+  0% {
+
+    bottom: -80px;
+
+    opacity: 0;
+
+    transform:
+      translateX(0)
+      rotate(0deg);
+  }
+
+  12% {
+
+    opacity: 1;
+  }
+
+  50% {
+
+    transform:
+      translateX(45px)
+      rotate(8deg);
+  }
+
+  100% {
+
+    bottom: 110%;
+
+    opacity: 0;
+
+    transform:
+      translateX(-45px)
+      rotate(-8deg);
+  }
+}
+
+
+/* =========================
+   LOVE PUTIH
+========================= */
+
+.love {
+
+  position: fixed;
+
+  bottom: -30px;
+
+  z-index: 999;
+
+  font-size: 28px;
+
+  pointer-events: none;
+
+  animation:
+    loveFly
+    linear
+    forwards;
+}
+
+
+@keyframes loveFly {
+
+  0% {
+
+    bottom: -30px;
+
+    opacity: 0;
+
+    transform:
+      scale(.6);
+  }
+
+  15% {
+
+    opacity: 1;
+  }
+
+  100% {
+
+    bottom: 110vh;
+
+    opacity: 0;
+
+    transform:
+      translateX(45px)
+      scale(1.3);
+  }
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-height: 700px) {
+
+  .card {
+
+    padding-top: 25px;
+    padding-bottom: 15px;
+  }
+
+  .small-title {
+
+    margin-bottom: 18px;
+
+    font-size: 14px;
+  }
+
+  .name {
+
+    margin-top: 8px;
+  }
+
+  .age {
+
+    margin-top: 4px;
+  }
+
+  .cake-area {
+
+    margin-top: 0;
+  }
+
+  .line {
+
+    margin-top: 5px;
+  }
+
+  .gift-area {
+
+    margin-top: 0;
+  }
+
+}
+
+
+/* HP SANGAT KECIL */
+
+@media (max-height: 600px) {
+
+  .small-title {
+    margin-bottom: 8px;
+  }
+
+  .special {
+    font-size: 18px;
+  }
+
+  .instruction {
+    font-size: 11px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+  <div class="card">
+
+    <!-- dekorasi -->
+    <div class="decor one">♡</div>
+    <div class="decor two">♡</div>
+    <div class="decor three">✦</div>
+
+
+    <!-- tulisan asli -->
+    <div class="small-title">
+      A LITTLE BIRTHDAY GIFT
     </div>
 
-    <div class="special-day">
-      Happy Special Day
+
+    <div class="main-title">
+      Happy<br>
+      Birthday
     </div>
 
-    <div class="birthday-name">
+
+    <!-- NAMA BARU -->
+    <div class="name">
       Arsya Surya Sanjaya
     </div>
 
-    <!-- KUE -->
-    <div class="cake-area" id="cakeArea">
 
-      <div class="candle" id="candle">
+    <!-- USIA -->
+    <div class="age">
+      19
+    </div>
+
+
+    <!-- KUE -->
+    <div
+      class="cake-area"
+      id="cakeArea"
+    >
+
+      <div
+        class="candle"
+        id="candle"
+      >
         🕯️
       </div>
 
@@ -35,24 +654,38 @@
 
     </div>
 
-    <div id="instruction">
+
+    <div
+      class="instruction"
+      id="instruction"
+    >
       Tekan lilinnya 🕯️
     </div>
 
-    <!-- HADIAH -->
+
+    <!-- tulisan dari contoh -->
+    <div class="special">
+      Untuk seseorang yang<br>
+      spesial 🤍
+    </div>
+
+
+    <div class="line"></div>
+
+
+    <!-- KADO -->
     <div class="gift-area">
 
-      <div class="gift-icon">
+      <div class="gift">
         🎁
       </div>
 
-      <a href="public/gift.html" class="gift-button">
+      <a
+        href="public/gift.html"
+        class="gift-button"
+      >
         💝 Buka Hadiah
       </a>
-
-      <div class="gift-text">
-        Ada sesuatu yang spesial untukmu 🤍
-      </div>
 
     </div>
 
@@ -61,462 +694,55 @@
 </div>
 
 
-<style>
-
-/* =========================
-   HALAMAN UTAMA
-========================= */
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-#birthdayScene {
-  position: fixed;
-  inset: 0;
-
-  width: 100vw;
-  height: 100vh;
-
-  overflow: hidden;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background:
-    radial-gradient(
-      circle at 50% 20%,
-      #d99bea 0%,
-      #a85fc5 45%,
-      #713b91 100%
-    );
-}
-
-
-/* =========================
-   DEKORASI LUAR
-========================= */
-
-.decor-heart {
-  position: absolute;
-  color: #f7b9e0;
-  font-size: 48px;
-  z-index: 1;
-}
-
-.heart-1 {
-  top: 7%;
-  left: 5%;
-}
-
-.heart-2 {
-  bottom: 8%;
-  right: 5%;
-}
-
-.decor-star {
-  position: absolute;
-  color: #ffffff;
-  font-size: 28px;
-  opacity: .8;
-  z-index: 1;
-}
-
-.star-1 {
-  top: 12%;
-  right: 8%;
-}
-
-.star-2 {
-  bottom: 15%;
-  left: 6%;
-}
-
-
-/* =========================
-   PANEL PINK
-========================= */
-
-.birthday-card {
-  position: relative;
-
-  width: 88%;
-  height: 91%;
-
-  box-sizing: border-box;
-
-  padding: 22px 18px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-
-  text-align: center;
-
-  background:
-    linear-gradient(
-      180deg,
-      #ffd8ed 0%,
-      #ffc8e5 55%,
-      #f6b9dc 100%
-    );
-
-  border: 3px solid rgba(255,255,255,.65);
-
-  border-radius: 30px;
-
-  box-shadow:
-    0 0 25px rgba(255,180,230,.35),
-    inset 0 0 30px rgba(255,255,255,.2);
-
-  z-index: 2;
-}
-
-
-/* =========================
-   LABEL ATAS
-========================= */
-
-.top-label {
-  color: #a84b82;
-
-  font-family: Georgia, serif;
-
-  font-size: clamp(11px, 3vw, 16px);
-
-  letter-spacing: 5px;
-
-  margin-top: 3px;
-}
-
-
-/* =========================
-   JUDUL
-========================= */
-
-.special-day {
-  color: #d52d91;
-
-  font-family: Georgia, serif;
-
-  font-size: clamp(34px, 10vw, 58px);
-
-  line-height: .95;
-
-  font-weight: bold;
-
-  text-shadow:
-    0 3px 7px rgba(175,45,120,.2);
-
-  margin-top: 5px;
-}
-
-
-.birthday-name {
-  color: #8c438f;
-
-  font-family: Georgia, serif;
-
-  font-size: clamp(19px, 5vw, 28px);
-
-  font-weight: bold;
-
-  margin-top: 4px;
-}
-
-
-/* =========================
-   KUE
-========================= */
-
-.cake-area {
-  position: relative;
-
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  width: 190px;
-  height: 150px;
-
-  cursor: pointer;
-
-  margin-top: 0;
-
-  z-index: 10;
-}
-
-
-.cake {
-  font-size: clamp(105px, 32vw, 155px);
-
-  line-height: 1;
-
-  filter:
-    drop-shadow(
-      0 8px 8px rgba(120,50,100,.25)
-    );
-
-  transition:
-    transform .2s ease;
-}
-
-
-.cake-area:active .cake {
-  transform: scale(1.08);
-}
-
-
-/* =========================
-   LILIN
-========================= */
-
-.candle {
-  position: absolute;
-
-  left: 50%;
-  top: -2px;
-
-  transform: translateX(-50%);
-
-  font-size: 48px;
-
-  cursor: pointer;
-
-  z-index: 20;
-
-  transition:
-    transform .2s ease;
-}
-
-
-.candle:active {
-  transform:
-    translateX(-50%)
-    scale(1.25);
-}
-
-
-/* =========================
-   INSTRUKSI
-========================= */
-
-#instruction {
-  color: #a23e7d;
-
-  font-size: 14px;
-
-  font-weight: bold;
-
-  margin-top: -8px;
-}
-
-
-/* =========================
-   HADIAH
-========================= */
-
-.gift-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  margin-bottom: 2px;
-}
-
-
-.gift-icon {
-  font-size: 42px;
-
-  line-height: 1;
-}
-
-
-.gift-button {
-  display: inline-block;
-
-  margin-top: 5px;
-
-  padding: 10px 25px;
-
-  border-radius: 30px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #e94c9b,
-      #8e48bd
-    );
-
-  color: white;
-
-  text-decoration: none;
-
-  font-size: 16px;
-
-  font-weight: bold;
-
-  box-shadow:
-    0 5px 15px rgba(120,55,150,.3);
-}
-
-
-.gift-text {
-  color: #91427d;
-
-  font-size: 12px;
-
-  margin-top: 5px;
-}
-
-
-/* =========================
-   BALON
-========================= */
-
-.flying-balloon {
-  position: absolute;
-
-  bottom: -80px;
-
-  font-size: 42px;
-
-  z-index: 50;
-
-  pointer-events: none;
-
-  animation:
-    balloonUp linear forwards;
-}
-
-
-@keyframes balloonUp {
-
-  0% {
-    bottom: -80px;
-    opacity: 0;
-
-    transform:
-      translateX(0)
-      rotate(0deg);
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  50% {
-    transform:
-      translateX(40px)
-      rotate(8deg);
-  }
-
-  100% {
-    bottom: 110%;
-
-    opacity: 0;
-
-    transform:
-      translateX(-40px)
-      rotate(-8deg);
-  }
-}
-
-
-/* =========================
-   HATI PUTIH
-========================= */
-
-.flying-heart {
-  position: fixed;
-
-  bottom: -40px;
-
-  font-size: 28px;
-
-  z-index: 9999;
-
-  pointer-events: none;
-
-  animation:
-    heartUp linear forwards;
-}
-
-
-@keyframes heartUp {
-
-  0% {
-    bottom: -40px;
-
-    opacity: 0;
-
-    transform:
-      scale(.6);
-  }
-
-  15% {
-    opacity: 1;
-  }
-
-  100% {
-    bottom: 110vh;
-
-    opacity: 0;
-
-    transform:
-      translateX(45px)
-      scale(1.25);
-  }
-}
-
-</style>
-
-
 <script>
 
-/* =========================
-   MUSIK HAPPY BIRTHDAY
-========================= */
+/* ==================================
+   KUE & LILIN
+================================== */
 
 const candle =
   document.getElementById("candle");
 
-const birthdayScene =
-  document.getElementById("birthdayScene");
+const cakeArea =
+  document.getElementById("cakeArea");
+
+const card =
+  document.querySelector(".card");
 
 const instruction =
   document.getElementById("instruction");
 
-let birthdayStarted = false;
 
+let birthdayPlayed = false;
+
+
+/* ==================================
+   MUSIK HAPPY BIRTHDAY
+================================== */
 
 function playHappyBirthday() {
 
-  if (birthdayStarted) return;
+  if (birthdayPlayed) return;
 
-  birthdayStarted = true;
+  birthdayPlayed = true;
+
 
   const AudioContext =
     window.AudioContext ||
     window.webkitAudioContext;
 
+
   if (!AudioContext) return;
+
 
   const audio =
     new AudioContext();
 
 
   /*
-    Happy Birthday To You
-  */
+   * Melodi:
+   * Happy Birthday To You
+   */
 
   const notes = [
 
@@ -556,71 +782,79 @@ function playHappyBirthday() {
     audio.currentTime;
 
 
-  notes.forEach(function(note) {
+  notes.forEach(
+    function(note) {
 
-    const oscillator =
-      audio.createOscillator();
+      const oscillator =
+        audio.createOscillator();
 
-    const gain =
-      audio.createGain();
-
-
-    oscillator.type =
-      "sine";
-
-    oscillator.frequency.value =
-      note[0];
+      const gain =
+        audio.createGain();
 
 
-    gain.gain.setValueAtTime(
-      .001,
-      time
-    );
+      oscillator.type =
+        "sine";
 
 
-    gain.gain.exponentialRampToValueAtTime(
-      .16,
-      time + .03
-    );
+      oscillator.frequency.value =
+        note[0];
 
 
-    gain.gain.exponentialRampToValueAtTime(
-      .001,
-      time + note[1] - .03
-    );
+      gain.gain.setValueAtTime(
+        .001,
+        time
+      );
 
 
-    oscillator.connect(gain);
-
-    gain.connect(
-      audio.destination
-    );
-
-
-    oscillator.start(time);
-
-    oscillator.stop(
-      time + note[1]
-    );
+      gain.gain.exponentialRampToValueAtTime(
+        .15,
+        time + .03
+      );
 
 
-    time +=
-      note[1] + .04;
+      gain.gain.exponentialRampToValueAtTime(
+        .001,
+        time + note[1] - .03
+      );
 
-  });
+
+      oscillator.connect(gain);
+
+      gain.connect(
+        audio.destination
+      );
+
+
+      oscillator.start(time);
+
+      oscillator.stop(
+        time + note[1]
+      );
+
+
+      time +=
+        note[1] + .04;
+
+    }
+  );
 
 }
 
 
-/* =========================
-   KETIKA LILIN DITEKAN
-========================= */
+/* ==================================
+   LILIN DITEKAN
+================================== */
 
 candle.addEventListener(
   "click",
   function(event) {
 
     event.stopPropagation();
+
+
+    /* Lilin mati */
+
+    candle.classList.add("off");
 
 
     instruction.innerHTML =
@@ -632,82 +866,18 @@ candle.addEventListener(
     playHappyBirthday();
 
 
-    /* =====================
-       BALON
-    ===================== */
+    /* ==================================
+       BALON WARNA-WARNI
+    ================================== */
 
-    const balloons = [
-
-      "🎈",
-      "🎈",
-      "🎈",
-      "🎈",
-      "🎈",
-      "🎈",
-      "🎈",
-      "🎈",
-      "🎈",
-      "🎈",
-      "🎈",
-      "🎈",
-      "🎈",
+    const colors = [
       "🎈",
       "🎈",
       "🎈",
       "🎈",
       "🎈"
-
     ];
 
-
-    balloons.forEach(
-      function(symbol,index) {
-
-        const balloon =
-          document.createElement("div");
-
-
-        balloon.className =
-          "flying-balloon";
-
-
-        balloon.innerHTML =
-          symbol;
-
-
-        balloon.style.left =
-          (Math.random() * 92) + "%";
-
-
-        balloon.style.animationDuration =
-          (3 + Math.random() * 3) + "s";
-
-
-        balloon.style.animationDelay =
-          (index * .12) + "s";
-
-
-        birthdayScene.appendChild(
-          balloon
-        );
-
-
-        setTimeout(
-          function() {
-
-            balloon.remove();
-
-          },
-          7000
-        );
-
-      }
-    );
-
-
-    /* =====================
-       HATI PUTIH 🤍
-    ===================== */
 
     for (
       let i = 0;
@@ -715,42 +885,98 @@ candle.addEventListener(
       i++
     ) {
 
-      const heart =
+      const balloon =
         document.createElement("div");
 
 
-      heart.className =
-        "flying-heart";
+      balloon.className =
+        "balloon";
 
 
-      heart.innerHTML =
-        "🤍";
+      balloon.innerHTML =
+        colors[
+          Math.floor(
+            Math.random() *
+            colors.length
+          )
+        ];
 
 
-      heart.style.left =
-        (Math.random() * 100) + "vw";
+      balloon.style.left =
+        (Math.random() * 95) + "%";
 
 
-      heart.style.animationDuration =
-        (2.5 + Math.random() * 2) + "s";
+      balloon.style.animationDuration =
+        (3 + Math.random() * 3) + "s";
 
 
-      heart.style.animationDelay =
+      balloon.style.animationDelay =
         (Math.random() * 1.5) + "s";
 
 
-      document.body.appendChild(
-        heart
+      card.appendChild(
+        balloon
       );
 
 
       setTimeout(
         function() {
 
-          heart.remove();
+          balloon.remove();
 
         },
-        5000
+        7500
+      );
+
+    }
+
+
+    /* ==================================
+       LOVE PUTIH 🤍
+    ================================== */
+
+    for (
+      let i = 0;
+      i < 30;
+      i++
+    ) {
+
+      const love =
+        document.createElement("div");
+
+
+      love.className =
+        "love";
+
+
+      love.innerHTML =
+        "🤍";
+
+
+      love.style.left =
+        (Math.random() * 100) + "vw";
+
+
+      love.style.animationDuration =
+        (2.5 + Math.random() * 2.5) + "s";
+
+
+      love.style.animationDelay =
+        (Math.random() * 1.5) + "s";
+
+
+      document.body.appendChild(
+        love
+      );
+
+
+      setTimeout(
+        function() {
+
+          love.remove();
+
+        },
+        5500
       );
 
     }
@@ -758,6 +984,9 @@ candle.addEventListener(
   }
 );
 
-  </script>
+</script>
+
+</body>
+</html>
 </body>
 </html>
