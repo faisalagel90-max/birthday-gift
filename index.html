@@ -113,13 +113,151 @@ html, body {
 </div>
 
 <script>
-function tekanLilin() {
-  const message = document.getElementById("message");
-  message.classList.add("show");
+let sudahDitekan = false;
 
-  setTimeout(() => {
-    message.classList.remove("show");
-  }, 2500);
+function tekanLilin() {
+
+    if (sudahDitekan) return;
+    sudahDitekan = true;
+
+    const message = document.getElementById("message");
+    message.classList.add("show");
+
+    /* 🎈 BALON */
+    for (let i = 0; i < 18; i++) {
+
+        const balon = document.createElement("div");
+
+        balon.innerHTML = "🎈";
+
+        balon.style.position = "fixed";
+        balon.style.left = Math.random() * 100 + "vw";
+        balon.style.bottom = "-60px";
+        balon.style.fontSize = (25 + Math.random() * 25) + "px";
+        balon.style.zIndex = "9999";
+        balon.style.pointerEvents = "none";
+        balon.style.animation =
+            "naikBalon " +
+            (4 + Math.random() * 3) +
+            "s linear forwards";
+
+        document.body.appendChild(balon);
+
+        setTimeout(() => {
+            balon.remove();
+        }, 7500);
+    }
+
+    /* 🤍 HATI */
+    for (let i = 0; i < 25; i++) {
+
+        const hati = document.createElement("div");
+
+        hati.innerHTML = "🤍";
+
+        hati.style.position = "fixed";
+        hati.style.left = Math.random() * 100 + "vw";
+        hati.style.bottom = "-30px";
+        hati.style.fontSize = (18 + Math.random() * 20) + "px";
+        hati.style.zIndex = "10000";
+        hati.style.pointerEvents = "none";
+        hati.style.animation =
+            "naikHati " +
+            (3 + Math.random() * 3) +
+            "s linear forwards";
+
+        document.body.appendChild(hati);
+
+        setTimeout(() => {
+            hati.remove();
+        }, 6500);
+    }
+
+    /* 🎵 MUSIK HAPPY BIRTHDAY */
+    mainkanHappyBirthday();
+}
+
+
+/* 🎈 ANIMASI BALON */
+const style = document.createElement("style");
+
+style.innerHTML = `
+@keyframes naikBalon {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+@keyframes naikHati {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) translateX(40px) scale(1.5);
+        opacity: 0;
+    }
+}
+`;
+
+document.head.appendChild(style);
+
+
+/* 🎵 HAPPY BIRTHDAY */
+function mainkanHappyBirthday() {
+
+    const AudioContext =
+        window.AudioContext ||
+        window.webkitAudioContext;
+
+    const audio = new AudioContext();
+
+    const nada = {
+        C: 261.63,
+        D: 293.66,
+        E: 329.63,
+        F: 349.23,
+        G: 392.00,
+        A: 440.00,
+        B: 493.88
+    };
+
+    const lagu = [
+        ["G",0.4],["G",0.4],["A",0.8],["G",0.8],["C",0.8],["B",1.2],
+        ["G",0.4],["G",0.4],["A",0.8],["G",0.8],["D",0.8],["C",1.2],
+        ["G",0.4],["G",0.4],["G",0.8],["E",0.8],["C",0.8],["B",0.8],["A",1.2],
+        ["F",0.4],["F",0.4],["E",0.8],["C",0.8],["D",0.8],["C",1.5]
+    ];
+
+    let waktu = audio.currentTime;
+
+    lagu.forEach(([n, durasi]) => {
+
+        const oscillator = audio.createOscillator();
+        const gain = audio.createGain();
+
+        oscillator.type = "sine";
+        oscillator.frequency.value = nada[n];
+
+        gain.gain.setValueAtTime(0.0001, waktu);
+        gain.gain.exponentialRampToValueAtTime(0.18, waktu + 0.03);
+        gain.gain.exponentialRampToValueAtTime(0.0001, waktu + durasi - 0.03);
+
+        oscillator.connect(gain);
+        gain.connect(audio.destination);
+
+        oscillator.start(waktu);
+        oscillator.stop(waktu + durasi);
+
+        waktu += durasi;
+    });
 }
 </script>
 
