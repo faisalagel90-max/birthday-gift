@@ -213,87 +213,17 @@ document.head.appendChild(style);
 /* 🎵 HAPPY BIRTHDAY */
 function mainkanHappyBirthday() {
 
-    const AudioContext =
-        window.AudioContext ||
-        window.webkitAudioContext;
+    const lagu = new Audio(
+        "public/Jamrud%20-%20Selamat%20Ulang%20Tahun%20-%20potong%207%20detik.mp3"
+    );
 
-    const audio = new AudioContext();
+    lagu.volume = 1.0;
+    lagu.currentTime = 0;
 
-    const nada = {
-        C: 261.63,
-        D: 293.66,
-        E: 329.63,
-        F: 349.23,
-        G: 392.00,
-        A: 440.00,
-        B: 493.88
-    };
-
-    /* 🎵 Happy Birthday - versi lebih ceria */
-    const lagu = [
-        ["G",0.28],["G",0.28],["A",0.50],["G",0.50],["C",0.50],["B",0.70],
-
-        ["G",0.28],["G",0.28],["A",0.50],["G",0.50],["D",0.50],["C",0.70],
-
-        ["G",0.28],["G",0.28],["G",0.50],["E",0.50],["C",0.50],["B",0.50],["A",0.70],
-
-        ["F",0.28],["F",0.28],["E",0.50],["C",0.50],["D",0.50],["C",1.00]
-    ];
-
-    let waktu = audio.currentTime;
-
-    lagu.forEach(([n, durasi]) => {
-
-        /* Nada utama */
-        const oscillator = audio.createOscillator();
-        const gain = audio.createGain();
-
-        oscillator.type = "triangle";
-        oscillator.frequency.value = nada[n];
-
-        gain.gain.setValueAtTime(0.0001, waktu);
-        gain.gain.exponentialRampToValueAtTime(
-            0.22,
-            waktu + 0.02
-        );
-        gain.gain.exponentialRampToValueAtTime(
-            0.0001,
-            waktu + durasi - 0.03
-        );
-
-        oscillator.connect(gain);
-        gain.connect(audio.destination);
-
-        oscillator.start(waktu);
-        oscillator.stop(waktu + durasi);
-
-        /* ✨ Harmoni ringan */
-        const harmony = audio.createOscillator();
-        const harmonyGain = audio.createGain();
-
-        harmony.type = "sine";
-        harmony.frequency.value = nada[n] * 2;
-
-        harmonyGain.gain.setValueAtTime(0.0001, waktu);
-        harmonyGain.gain.exponentialRampToValueAtTime(
-            0.06,
-            waktu + 0.02
-        );
-        harmonyGain.gain.exponentialRampToValueAtTime(
-            0.0001,
-            waktu + durasi - 0.03
-        );
-
-        harmony.connect(harmonyGain);
-        harmonyGain.connect(audio.destination);
-
-        harmony.start(waktu);
-        harmony.stop(waktu + durasi);
-
-        waktu += durasi;
+    lagu.play().catch(error => {
+        console.log("Musik tidak dapat diputar:", error);
     });
-  }
+}
 </script>
-
 </body>
 </html>
