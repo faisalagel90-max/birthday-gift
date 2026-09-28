@@ -4,254 +4,435 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hadiah Untukmu 🤍</title>
+<title>Hadiah Untuk Arsya 🤍</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{
+  box-sizing:border-box;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Georgia, serif;
-  background: linear-gradient(180deg, #ffd6e5, #fff0f5);
-  color: #5a3045;
-  padding: 25px 15px 50px;
+html,body{
+  margin:0;
+  padding:0;
+  min-height:100%;
 }
 
-.container {
-  max-width: 650px;
-  margin: auto;
+body{
+  font-family:Georgia,"Times New Roman",serif;
+
+  background:
+    linear-gradient(
+      135deg,
+      #713b91,
+      #a85fbd,
+      #e8a1c8
+    );
+
+  color:white;
 }
 
-.card {
-  background: rgba(255,255,255,0.92);
-  border-radius: 30px;
-  padding: 28px 20px;
-  box-shadow: 0 10px 35px rgba(150,70,100,0.18);
-  text-align: center;
+/* KONTEN */
+
+.page{
+  min-height:100vh;
+
+  display:flex;
+  justify-content:center;
+
+  padding:25px 15px;
 }
 
-.ribbon {
-  font-size: 55px;
-  margin-bottom: 5px;
+.card{
+  width:100%;
+  max-width:600px;
+
+  padding:30px 20px 35px;
+
+  border-radius:30px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffd8ed,
+      #f6c0df
+    );
+
+  border:3px solid rgba(255,255,255,.6);
+
+  box-shadow:
+    0 10px 30px rgba(70,30,80,.3);
+
+  text-align:center;
+
+  color:#713b65;
 }
 
-h1 {
-  font-size: 34px;
-  color: #d63378;
-  margin: 10px 0;
+/* JUDUL */
+
+.small-title{
+  font-size:14px;
+
+  letter-spacing:4px;
+
+  color:#a34d7e;
+
+  margin-bottom:20px;
 }
 
-.subtitle {
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 25px;
+.title{
+  font-size:42px;
+
+  color:#d52d91;
+
+  line-height:1;
+
+  margin:0;
 }
 
-.video-box {
-  width: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #000;
-  margin: 20px 0;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+.subtitle{
+  font-size:21px;
+
+  color:#8b467f;
+
+  margin-top:10px;
 }
 
-video {
-  display: block;
-  width: 100%;
-  height: auto;
+/* VIDEO */
+
+.video-title{
+  margin-top:28px;
+
+  font-size:22px;
+
+  color:#963d78;
 }
 
-.message {
-  font-size: 17px;
-  line-height: 1.8;
-  margin: 25px 5px;
+.video-box{
+  margin-top:12px;
+
+  width:100%;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  background:#000;
+
+  box-shadow:
+    0 7px 20px rgba(80,30,70,.25);
 }
 
-.divider {
-  width: 80px;
-  height: 3px;
-  background: #e85d93;
-  margin: 25px auto;
-  border-radius: 10px;
+video{
+  width:100%;
+
+  display:block;
+
+  max-height:65vh;
+
+  background:#000;
 }
 
-h2 {
-  color: #d63378;
-  font-size: 25px;
+/* PESAN */
+
+.message{
+  margin-top:25px;
+
+  padding:18px;
+
+  border-radius:18px;
+
+  background:
+    rgba(255,255,255,.35);
+
+  color:#713b65;
+
+  font-size:17px;
+
+  line-height:1.6;
 }
 
-label {
-  display: block;
-  text-align: left;
-  margin: 15px 5px 7px;
-  font-weight: bold;
+/* FORM */
+
+.form-title{
+  margin-top:25px;
+
+  font-size:22px;
+
+  color:#963d78;
 }
 
 input,
-textarea {
-  width: 100%;
-  padding: 14px;
-  border: 2px solid #f3b6cc;
-  border-radius: 15px;
-  font-family: Georgia, serif;
-  font-size: 16px;
-  outline: none;
-  background: #fffafd;
+textarea{
+
+  width:100%;
+
+  border:none;
+
+  outline:none;
+
+  border-radius:15px;
+
+  padding:14px;
+
+  margin-top:10px;
+
+  font-family:inherit;
+
+  font-size:16px;
+
+  background:
+    rgba(255,255,255,.8);
+
+  color:#603653;
 }
 
-input:focus,
-textarea:focus {
-  border-color: #df5b91;
+textarea{
+  min-height:130px;
+
+  resize:vertical;
 }
 
-textarea {
-  min-height: 140px;
-  resize: vertical;
+button{
+
+  width:100%;
+
+  border:none;
+
+  margin-top:15px;
+
+  padding:14px;
+
+  border-radius:25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e94c9b,
+      #9148b7
+    );
+
+  color:white;
+
+  font-family:inherit;
+
+  font-size:17px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 5px 15px rgba(100,40,110,.25);
 }
 
-button {
-  width: 100%;
-  margin-top: 20px;
-  padding: 15px;
-  border: none;
-  border-radius: 30px;
-  background: #df4f88;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  font-family: Georgia, serif;
-  cursor: pointer;
-  box-shadow: 0 5px 15px rgba(200,60,110,0.25);
+button:active{
+  transform:scale(.97);
 }
 
-button:active {
-  transform: scale(0.98);
+/* BERHASIL */
+
+.success{
+
+  display:none;
+
+  margin-top:15px;
+
+  padding:15px;
+
+  border-radius:15px;
+
+  background:
+    rgba(255,255,255,.5);
+
+  color:#7a3569;
+
+  line-height:1.5;
 }
 
-.saved {
-  display: none;
-  margin-top: 18px;
-  padding: 15px;
-  border-radius: 15px;
-  background: #ffe1ec;
-  color: #9d315e;
-  line-height: 1.6;
-}
+/* KEMBALI */
 
-.back {
-  display: inline-block;
-  margin-top: 25px;
-  color: #c73570;
-  text-decoration: none;
-  font-weight: bold;
-}
+.back{
 
-.heart {
-  position: fixed;
-  pointer-events: none;
-  animation: naik 5s linear forwards;
-  opacity: 0.7;
-}
+  display:inline-block;
 
-@keyframes naik {
-  from {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.8;
-  }
-  to {
-    transform: translateY(-100vh);
-    opacity: 0;
-  }
+  margin-top:25px;
+
+  color:#914375;
+
+  text-decoration:none;
+
+  font-size:15px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="page">
 
   <div class="card">
 
-    <div class="ribbon">🎀</div>
-
-    <h1>Hadiah Kecil Untukmu 💗</h1>
-
-    <p class="subtitle">
-      Ada sesuatu yang ingin aku sampaikan<br>
-      lewat sebuah video kecil ini.
-    </p>
-
-    <div class="divider"></div>
-
-    <div class="video-box">
-      <video controls playsinline>
-        <source src="video_hadiah_720p.mp4" type="video/mp4">
-        Browser kamu tidak mendukung video.
-      </video>
+    <div class="small-title">
+      ♥ A LITTLE BIRTHDAY GIFT ♥
     </div>
 
-    <p class="message">
-      Semoga video ini bisa menjadi salah satu
-      kenangan kecil yang membuatmu tersenyum.
-      Terima kasih sudah menjadi bagian dari
-      cerita yang pernah begitu berarti. 🤍
-    </p>
+    <h1 class="title">
+      Hadiah Kecil
+    </h1>
 
-    <div class="divider"></div>
+    <div class="subtitle">
+      Untuk Arsya Surya Sanjaya 🤍
+    </div>
 
-    <h2>💌 Tulis Doa & Harapan</h2>
 
-    <p>
-      Sebelum meninggalkan halaman ini,
-      tuliskan satu doa atau harapan untuk dirimu sendiri.
-    </p>
+    <!-- VIDEO -->
+
+    <div class="video-title">
+      🎬 Sebuah video untukmu
+    </div>
+
+    <div class="video-box">
+
+      <video
+        controls
+        playsinline
+        preload="metadata"
+      >
+
+        <source
+          src="video_hadiah_720p.mp4"
+          type="video/mp4"
+        >
+
+        Browser kamu tidak mendukung video.
+
+      </video>
+
+    </div>
+
+
+    <!-- PESAN -->
+
+    <div class="message">
+
+      Selamat ulang tahun yang ke-19, Arsya. 🤍
+
+      <br><br>
+
+      Semoga di usia yang baru ini,
+      semua langkahmu dipenuhi kebahagiaan,
+      keberanian, dan hal-hal indah
+      yang kamu harapkan.
+
+      <br><br>
+
+      Terima kasih untuk semua cerita,
+      tawa, dan kenangan yang pernah ada.
+
+    </div>
+
+
+    <!-- DOA -->
+
+    <div class="form-title">
+      💌 Tulis Doa & Harapan
+    </div>
 
     <form id="wishForm">
-
-      <label for="nama">Nama</label>
 
       <input
         type="text"
         id="nama"
-        placeholder="Tulis namamu..."
+        placeholder="Namamu"
         required
       >
 
-      <label for="harapan">Doa & Harapan</label>
-
       <textarea
         id="harapan"
-        placeholder="Tuliskan doa dan harapanmu di sini..."
+        placeholder="Tulis doa dan harapanmu untuk Arsya..."
         required
       ></textarea>
 
       <button type="submit">
-        💗 Simpan Doa & Harapan
+        💗 Kirim Harapan
       </button>
 
     </form>
 
-    <div class="saved" id="saved">
-      ✨ Terima kasih sudah menuliskan doa dan harapanmu.
+
+    <div
+      class="success"
+      id="success"
+    >
+      🤍 Terima kasih sudah memberikan
+      doa dan harapan.
+
       <br>
-      Semoga semuanya satu per satu menjadi kenyataan. 🤍
+
+      Semoga semua kebaikan kembali
+      kepadamu. ✨
     </div>
 
-    <a class="back" href="../index.html">
-      ← Kembali ke halaman utama
+
+    <a
+      href="../index.html"
+      class="back"
+    >
+      ← Kembali ke halaman awal
     </a>
 
   </div>
 
 </div>
 
+
 <script>
 
-const form = document.getElementById("wish
+const form =
+  document.getElementById("wishForm");
+
+const success =
+  document.getElementById("success");
+
+
+form.addEventListener(
+  "submit",
+  function(event){
+
+    event.preventDefault();
+
+    const nama =
+      document.getElementById("nama").value;
+
+    const harapan =
+      document.getElementById("harapan").value;
+
+
+    /* Simpan di browser */
+
+    localStorage.setItem(
+      "birthdayName",
+      nama
+    );
+
+    localStorage.setItem(
+      "birthdayWish",
+      harapan
+    );
+
+
+    /* Tampilkan pesan */
+
+    success.style.display =
+      "block";
+
+    form.style.display =
+      "none";
+
+  }
+);
+
+</script>
+
+</body>
+</html>
