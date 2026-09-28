@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untukmu, di Usia 19 🤍</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Georgia", "Times New Roman", serif;
+    background:
+        radial-gradient(circle at top, #4a2335 0%, #21151c 45%, #0d0b0d 100%);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Background hearts */
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    color: rgba(255, 170, 200, 0.55);
+    font-size: 20px;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Main */
+main {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.card {
+    width: 100%;
+    max-width: 650px;
+    padding: 45px 25px;
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,0.5),
+        inset 0 1px rgba(255,255,255,0.15);
+
+    animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.small {
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #f5b6ca;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(42px, 12vw, 78px);
+    line-height: 1;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.number {
+    font-size: clamp(80px, 25vw, 150px);
+    line-height: .9;
+    font-weight: bold;
+    color: #f5b6ca;
+    text-shadow:
+        0 0 20px rgba(245,182,202,.4),
+        0 0 50px rgba(245,182,202,.15);
+}
+
+.subtitle {
+    margin: 25px auto;
+    max-width: 480px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #f2e7eb;
+}
+
+.name {
+    font-size: 26px;
+    margin-top: 15px;
+    color: #fff;
+}
+
+.divider {
+    width: 80px;
+    height: 1px;
+    background: #e9a6bd;
+    margin: 25px auto;
+}
+
+.btn {
+    display: inline-block;
+    border: 0;
+    text-decoration: none;
+    cursor: pointer;
+
+    padding: 15px 28px;
+    margin: 8px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(135deg, #f5b6ca, #d8799c);
+    color: #24141b;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+
+    box-shadow: 0 10px 30px rgba(216,121,156,.25);
+
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(216,121,156,.4);
+}
+
+.btn.secondary {
+    background: rgba(255,255,255,.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.2);
+}
+
+/* Sections */
+section.content {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.content-card {
+    width: 100%;
+    max-width: 650px;
+    padding: 35px 25px;
+
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.14);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(12px);
+}
+
+.content-card h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.content-card p {
+    line-height: 1.9;
+    color: #eadde2;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Wish form */
+.form-group {
+    margin-top: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #f5b6ca;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 15px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255,255,255,.15);
+    background: rgba(0,0,0,.25);
+
+    color: white;
+    font-family: inherit;
+    font-size: 16px;
+
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #e99db9;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-button {
+    width: 100%;
+    margin: 20px 0 0;
+}
+
+.message {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: rgba(245,182,202,.12);
+    border: 1px solid rgba(245,182,202,.25);
+
+    text-align: center;
+    color: #ffdce8;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    color: #a99ba1;
+    font-size: 13px;
+}
+
+.signature {
+    margin-top: 15px;
+    color: #f5b6ca;
+    font-size: 18px;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+
+    .card {
+        padding: 40px 20px;
+        border-radius: 25px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .content-card {
+        padding: 30px 20px;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 6px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Animated hearts -->
+<div class="hearts">
+    <span class="heart" style="left:5%; animation-duration:9s;">♡</span>
+    <span class="heart" style="left:15%; animation-duration:12s; animation-delay:2s;">♥</span>
+    <span class="heart" style="left:28%; animation-duration:10s; animation-delay:4s;">♡</span>
+    <span class="heart" style="left:43%; animation-duration:14s; animation-delay:1s;">♥</span>
+    <span class="heart" style="left:58%; animation-duration:11s; animation-delay:3s;">♡</span>
+    <span class="heart" style="left:72%; animation-duration:13s;">♥</span>
+    <span class="heart" style="left:87%; animation-duration:10s; animation-delay:5s;">♡</span>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="card">
+
+        <div class="small">
+            A little birthday gift
+        </div>
+
+        <h1>
+            Happy Birthday
+        </h1>
+
+        <div class="number">
+            19
+        </div>
+
+        <div class="name">
+            Untuk seseorang yang spesial 🤍
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="subtitle">
+            Hari ini bukan hanya tentang bertambahnya usia.
+            Tapi tentang semua cerita, tawa, air mata,
+            dan perjalanan yang sudah kamu lewati sampai sejauh ini.
+        </p>
+
+        <p class="subtitle">
+            Semoga usia 19 membawa lebih banyak
+            kebahagiaan, keberanian, dan hal-hal indah
+            yang belum pernah kamu bayangkan.
+        </p>
+
+        <a href="public/gift.html" class="btn">
+            💌 Buka Hadiah
+        </a>
+
+        <a href="#wish" class="btn secondary">
+            ✨ Tulis Harapan
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- MESSAGE -->
+<section class="content">
+
+    <div class="content-card">
+
+        <h2>
+            Untukmu 🤍
+        </h2>
+
+        <div class="divider"></div>
+
+        <p>
+            Ada banyak hal yang mungkin tidak pernah
+            sempat disampaikan dengan kata-kata.
+            Jadi, biarkan halaman kecil ini menjadi
+            salah satu cara untuk menyampaikannya.
+        </p>
+
+        <br>
+
+        <p>
+            Terima kasih sudah menjadi bagian dari
+            cerita yang pernah ada.
+            Semoga apa pun yang sedang kamu perjuangkan
+            hari ini, suatu hari nanti bisa menjadi
+            sesuatu yang membuatmu tersenyum dan berkata,
+            <i>"Ternyata semuanya sepadan."</i>
+        </p>
+
+        <br>
+
+        <p>
+            Selamat ulang tahun ke-19.
+            Semoga kamu selalu menemukan alasan
+            untuk bahagia. 🌷
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- WISH FORM -->
+<section class="content" id="wish">
+
+    <div class="content-card">
+
+        <h2>
+            Tulis Doa & Harapanmu ✨
+        </h2>
+
+        <div class="divider"></div>
+
+        <p>
+            Tulis satu hal yang ingin kamu wujudkan
+            di usia 19.
+        </p>
+
+        <form id="wishForm">
+
+            <div class="form-group">
+
+                <label for="nama">
+                    Namamu
+                </label>
+
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Tulis namamu..."
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="harapan">
+                    Doa / Harapan
+                </label>
+
+                <textarea
+                    id="harapan"
+                    placeholder="Tulis doa dan harapanmu di sini..."
+                    required
+                ></textarea>
+
+            </div>
+
+            <button
+                type="submit"
+                class="btn form-button">
+                💗 Simpan Harapan
+            </button>
+
+        </form>
+
+        <div id="message" class="message">
+            Harapanmu sudah disimpan. Semoga suatu hari nanti menjadi kenyataan. 🤍
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- END -->
+<section class="content">
+
+    <div class="content-card">
+
+        <h2>
+            Satu halaman kecil,
+            untuk satu cerita yang berarti.
+        </h2>
+
+        <div class="divider"></div>
+
+        <p>
+            Kalau sudah siap, buka hadiah berikutnya.
+        </p>
+
+        <div style="text-align:center; margin-top:25px;">
+
+            <a href="public/gift.html" class="btn">
+                🎁 Lanjut ke Hadiah
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    Dibuat dengan hati 🤍
+
+    <div class="signature">
+        Happy 19th Birthday
+    </div>
+
+</footer>
+
+
+<script>
+
+/* ================================
+   SAVE WISH
+================================ */
+
+const form = document.getElementById("wishForm");
+const message = document.getElementById("message");
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const nama = document.getElementById("nama").value.trim();
+    const harapan = document.getElementById("harapan").value.trim();
+
+    if (!nama || !harapan) {
+        return;
+    }
+
+    const data = {
+        nama: nama,
+        harapan: harapan,
+        waktu: new Date().toLocaleString("id-ID")
+    };
+
+    /*
+       Simpan di browser.
+       Data tidak hilang ketika halaman direfresh.
+    */
+
+    let wishes =
+        JSON.parse(localStorage.getItem("birthdayWishes")) || [];
+
+    wishes.push(data);
+
+    localStorage.setItem(
+        "birthdayWishes",
+        JSON.stringify(wishes)
+    );
+
+    message.style.display = "block";
+
+    form.reset();
+
+    setTimeout(function() {
+        message.style.display = "none";
+    }, 5000);
+
+});
+
+
+/* ================================
+   RANDOM HEART POSITION
+================================ */
+
+document.querySelectorAll(".heart").forEach(function(heart) {
+
+    heart.style.animationDelay =
+        (Math.random() * 5) + "s";
+
+});
+
+
+</script>
+
+</body>
+</html>
