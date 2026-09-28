@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -10,6 +9,7 @@
 <style>
 *{
   box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
 }
 
 html,body{
@@ -17,494 +17,386 @@ html,body{
   padding:0;
   width:100%;
   min-height:100%;
+  font-family:Georgia,"Times New Roman",serif;
 }
 
 body{
   background:
-    radial-gradient(circle at top,#c86be2 0%,#8c35a7 45%,#54206f 100%);
-  font-family:Georgia,"Times New Roman",serif;
+    radial-gradient(circle at 50% 0%,#c95bd8 0%,#8b36a9 42%,#55166f 100%);
   overflow-x:hidden;
-  color:#8d176d;
+  color:#7d216e;
 }
 
-/* PANEL UTAMA */
+/* AREA UTAMA */
 .page{
-  width:min(92vw,760px);
+  position:relative;
+  width:min(100%,760px);
   min-height:100vh;
   margin:0 auto;
-  padding:28px 22px 35px;
-  position:relative;
+  padding:20px 14px;
+}
 
+/* KARTU PINK */
+.card{
+  position:relative;
+  min-height:calc(100vh - 40px);
+  border-radius:38px;
+  border:3px solid rgba(255,255,255,.8);
   background:
     linear-gradient(
       180deg,
-      #ffd9ef 0%,
-      #ffc8e7 45%,
-      #f6afd9 100%
+      #ffd9ec 0%,
+      #ffc9e5 45%,
+      #f7afd5 100%
     );
-
-  border-left:3px solid rgba(255,255,255,.75);
-  border-right:3px solid rgba(255,255,255,.75);
   box-shadow:
-    0 0 35px rgba(255,105,210,.45),
-    inset 0 0 35px rgba(255,255,255,.25);
+    0 0 0 2px rgba(255,148,218,.45),
+    0 15px 45px rgba(54,0,70,.45);
+  overflow:hidden;
+  text-align:center;
 }
 
-/* SUDUT PANEL */
-.page:before{
-  content:"";
-  position:absolute;
-  inset:8px;
-  border:2px solid rgba(255,255,255,.7);
-  border-radius:30px;
-  pointer-events:none;
-}
-
-/* DEKORASI */
-.decor{
+/* Hiasan */
+.sparkle{
   position:absolute;
   color:white;
-  opacity:.85;
-  font-size:35px;
-  z-index:2;
+  opacity:.9;
+  font-size:25px;
+  animation:twinkle 2s infinite alternate;
 }
 
-.d1{left:-25px;top:45px;}
-.d2{right:-28px;top:120px;}
-.d3{left:-20px;bottom:190px;}
-.d4{right:-22px;bottom:90px;}
+.s1{top:25px;left:22px}
+.s2{top:42px;right:20px}
+.s3{bottom:35px;left:22px}
+.s4{bottom:55px;right:20px}
 
-/* PITA ATAS */
-.bow{
+@keyframes twinkle{
+  from{transform:scale(.8);opacity:.45}
+  to{transform:scale(1.2);opacity:1}
+}
+
+/* PITA */
+.ribbon{
   position:relative;
-  width:190px;
-  height:70px;
-  margin:0 auto 5px;
-  z-index:5;
+  margin:-2px auto 4px;
+  width:175px;
+  height:62px;
 }
 
-.bow:before,
-.bow:after{
+.ribbon:before,
+.ribbon:after{
   content:"";
   position:absolute;
-  top:0;
-  width:85px;
-  height:55px;
-  background:linear-gradient(135deg,#e94baf,#9b218f);
-  border-radius:60% 15% 60% 15%;
-  box-shadow:0 5px 12px rgba(120,20,100,.25);
+  top:5px;
+  width:78px;
+  height:43px;
+  background:linear-gradient(145deg,#ff9ed2,#d9349b);
+  border-radius:55% 10% 55% 10%;
 }
 
-.bow:before{
+.ribbon:before{
   left:5px;
-  transform:rotate(-18deg);
+  transform:rotate(20deg);
 }
 
-.bow:after{
+.ribbon:after{
   right:5px;
-  transform:rotate(18deg) scaleX(-1);
+  transform:rotate(-20deg);
 }
 
-.bow-center{
+.heart{
   position:absolute;
+  z-index:3;
   left:50%;
-  top:8px;
+  top:12px;
   transform:translateX(-50%);
-  width:52px;
-  height:52px;
+  width:45px;
+  height:45px;
   border-radius:50%;
-  background:radial-gradient(circle,#ffb9e9,#d52a9f);
-  border:3px solid white;
-  box-shadow:0 4px 12px rgba(130,0,100,.3);
+  background:linear-gradient(#ff9bd4,#df2997);
+  border:3px solid #ffd9ef;
+  box-shadow:0 3px 12px #c52a8e;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:27px;
+  font-size:25px;
+  color:white;
 }
 
-/* SUB JUDUL */
-.top-title{
-  text-align:center;
-  font-size:18px;
+/* TEKS */
+.small-title{
+  margin-top:2px;
+  font-size:16px;
   letter-spacing:7px;
   font-weight:bold;
-  margin-top:5px;
-  color:#a72a80;
+  color:#b42c82;
 }
 
-/* JUDUL */
 h1{
-  margin:15px 0 0;
-  text-align:center;
-  font-size:clamp(55px,12vw,105px);
-  line-height:.85;
-  color:#c3228c;
+  margin:12px 0 0;
+  font-size:clamp(65px,15vw,105px);
+  line-height:.82;
+  color:#c02086;
   text-shadow:
-    2px 3px 0 #f48bc9,
-    0 5px 15px rgba(150,20,110,.25);
+    2px 3px 0 #f79acb,
+    0 6px 15px rgba(135,25,103,.25);
+  font-weight:bold;
 }
 
 .name{
-  text-align:center;
-  margin-top:18px;
-  font-size:clamp(25px,5vw,42px);
+  margin:16px 15px 4px;
+  font-size:clamp(25px,6vw,43px);
   font-weight:bold;
-  color:#63317d;
+  color:#70256e;
 }
 
 /* KUE */
 .cake-area{
   position:relative;
-  width:100%;
-  margin:25px auto 0;
-  text-align:center;
+  margin:12px auto 0;
+  width:min(88%,520px);
+  height:290px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .cake{
   position:relative;
-  width:min(78vw,440px);
-  height:270px;
-  margin:auto;
+  width:270px;
+  height:180px;
+  cursor:pointer;
+  user-select:none;
+  filter:drop-shadow(0 12px 12px rgba(100,25,90,.2));
 }
 
-/* BADAN KUE */
+.cake-top{
+  position:absolute;
+  top:45px;
+  left:10px;
+  width:250px;
+  height:65px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 25% 35%,#fff 0 5%,transparent 6%),
+    radial-gradient(circle at 55% 25%,#c759c8 0 7%,transparent 8%),
+    radial-gradient(circle at 75% 45%,#fff 0 7%,transparent 8%),
+    #ffd5ea;
+  border:5px solid #e76bb4;
+  z-index:3;
+}
+
 .cake-body{
   position:absolute;
-  left:50%;
-  bottom:15px;
-  transform:translateX(-50%);
-  width:82%;
-  height:145px;
-  border-radius:25px 25px 35px 35px;
-  background:
-    linear-gradient(
-      180deg,
-      #fff8fc 0%,
-      #ffc1e2 38%,
-      #f486c8 39%,
-      #ed5eb4 72%,
-      #c53a9f 73%
-    );
-  box-shadow:0 12px 20px rgba(120,30,100,.2);
-  border:3px solid white;
+  left:18px;
+  top:78px;
+  width:234px;
+  height:88px;
+  background:linear-gradient(#ffc8e4,#ff91c9);
+  border:5px solid #df58aa;
+  border-top:none;
+  border-radius:0 0 35px 35px;
+  z-index:2;
 }
 
-/* KRIM */
 .cream{
+  position:absolute;
+  left:20px;
+  top:83px;
+  width:225px;
+  height:30px;
+  background:white;
+  border-radius:50%;
+  z-index:4;
+  opacity:.95;
+}
+
+.candle{
   position:absolute;
   left:50%;
   top:0;
   transform:translateX(-50%);
-  width:90%;
-  height:52px;
-  border-radius:50%;
-  background:#fff8ff;
-  border:3px solid white;
-  box-shadow:0 5px 10px rgba(130,20,100,.15);
-}
-
-/* TABURAN */
-.sprinkles{
-  position:absolute;
-  top:20px;
-  left:0;
-  width:100%;
-  font-size:30px;
-  letter-spacing:8px;
-}
-
-/* LILIN */
-.candle{
-  position:absolute;
-  left:50%;
-  top:-82px;
-  transform:translateX(-50%);
-  width:34px;
-  height:90px;
-  border-radius:7px;
+  width:30px;
+  height:78px;
   background:repeating-linear-gradient(
-    45deg,
-    #ff8ccc 0px,
-    #ff8ccc 10px,
-    white 10px,
-    white 20px
+    135deg,
+    #fff 0 9px,
+    #ff66b8 9px 17px
   );
-  border:2px solid #fff;
+  border-radius:7px;
+  border:3px solid #ed8ac5;
+  z-index:8;
   cursor:pointer;
-  z-index:10;
-  box-shadow:0 3px 8px rgba(120,20,100,.2);
 }
 
-/* API */
+.wick{
+  position:absolute;
+  top:-13px;
+  left:50%;
+  transform:translateX(-50%);
+  width:4px;
+  height:14px;
+  background:#5e4050;
+}
+
 .flame{
   position:absolute;
-  top:-38px;
+  top:-52px;
   left:50%;
   transform:translateX(-50%);
-  width:25px;
-  height:38px;
-  background:#ffb300;
-  border-radius:50% 50% 50% 50%;
-  box-shadow:0 0 15px #ff9d00;
-  animation:flicker .6s infinite alternate;
-}
-
-@keyframes flicker{
-  from{transform:translateX(-50%) scale(.9);}
-  to{transform:translateX(-50%) scale(1.1);}
+  width:30px;
+  height:42px;
+  background:linear-gradient(#fff,#ffd34d,#ff7b00);
+  border-radius:55% 55% 55% 55%;
+  box-shadow:0 0 20px #ffb300;
+  animation:flicker .15s infinite alternate;
 }
 
 .flame.off{
   display:none;
 }
 
+@keyframes flicker{
+  from{transform:translateX(-50%) scale(.92)}
+  to{transform:translateX(-50%) scale(1.08)}
+}
+
+.cherry{
+  position:absolute;
+  z-index:6;
+  font-size:32px;
+}
+
+.c1{left:35px;top:20px}
+.c2{right:35px;top:15px}
+.c3{left:95px;top:10px}
+.c4{right:85px;top:25px}
+
 /* ANGKA 19 */
-.number{
-  text-align:center;
-  font-size:clamp(100px,23vw,190px);
+.age{
+  margin-top:-2px;
+  font-size:clamp(90px,20vw,145px);
   line-height:.8;
   font-weight:bold;
-  color:#ed65b6;
+  color:#f28ac4;
   text-shadow:
-    3px 4px 0 #ffb8df,
-    0 5px 12px rgba(130,20,100,.2);
-  margin-top:0;
+    2px 3px 0 #d94fa8,
+    0 5px 12px rgba(130,30,100,.25);
 }
 
 .instruction{
-  text-align:center;
-  margin-top:5px;
-  font-size:20px;
+  margin-top:4px;
+  font-size:18px;
   font-weight:bold;
-  color:#8c3c82;
+  color:#8a387a;
 }
 
-/* PEMISAH */
-.separator{
+/* GARIS */
+.divider{
   display:flex;
-  justify-content:center;
   align-items:center;
-  gap:25px;
-  margin:15px 0;
+  justify-content:center;
+  gap:16px;
+  margin:10px auto;
 }
 
-.separator span{
+.divider span{
   width:80px;
   height:3px;
-  background:#b43b8d;
+  background:#c95b9f;
 }
 
-.separator b{
+.divider b{
+  color:#a72579;
   font-size:27px;
-  color:#a32679;
 }
 
 /* TEKS */
 .special{
-  text-align:center;
+  margin:4px auto 5px;
   color:white;
-  font-size:clamp(22px,4.5vw,32px);
+  font-size:25px;
+  line-height:1.05;
   font-weight:bold;
-  text-shadow:0 2px 5px rgba(100,20,80,.3);
-  margin:5px 0 10px;
+  text-shadow:0 2px 5px rgba(100,20,80,.25);
 }
 
 /* KADO */
 .gift{
-  width:150px;
-  height:125px;
-  margin:0 auto 12px;
-  position:relative;
+  font-size:125px;
+  line-height:1;
   cursor:pointer;
-  transition:.3s;
+  filter:drop-shadow(0 9px 8px rgba(90,20,80,.2));
+  transition:.2s;
 }
 
-.gift:hover{
-  transform:scale(1.05);
+.gift:active{
+  transform:scale(.94);
 }
 
-.gift-box{
-  position:absolute;
-  left:10px;
-  right:10px;
-  bottom:0;
-  height:90px;
-  background:linear-gradient(90deg,#f25ab5,#b832a0);
-  border:3px solid #ffb6e2;
-  border-radius:5px;
-  box-shadow:0 8px 15px rgba(100,20,100,.2);
-}
-
-.gift-lid{
-  position:absolute;
-  left:0;
-  top:22px;
-  width:150px;
-  height:32px;
-  background:linear-gradient(90deg,#ff79c8,#c03a9f);
-  border-radius:6px;
-  z-index:3;
-}
-
-.ribbon-v{
-  position:absolute;
-  width:25px;
-  height:100%;
-  left:50%;
-  transform:translateX(-50%);
-  background:#ffd2ed;
-}
-
-.ribbon-h{
-  position:absolute;
-  left:0;
-  top:4px;
-  width:100%;
-  height:23px;
-  background:#ffd2ed;
-  z-index:4;
-}
-
-.ribbon{
-  position:absolute;
-  top:-8px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:5;
-  font-size:42px;
-}
-
-/* TOMBOL */
-.open{
-  display:block;
-  width:min(80vw,350px);
-  margin:0 auto;
-  padding:16px 25px;
-  border-radius:40px;
-  text-align:center;
-  text-decoration:none;
+/* BUTTON */
+.gift-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin-top:4px;
+  padding:13px 35px;
+  min-width:270px;
+  border-radius:50px;
+  border:3px solid rgba(255,255,255,.65);
+  background:linear-gradient(90deg,#ed36a4,#a33ad1);
   color:white;
-  font-size:24px;
+  text-decoration:none;
+  font-size:25px;
   font-weight:bold;
-
-  background:linear-gradient(90deg,#ee3fb0,#a83ad1);
-
   box-shadow:
-    0 8px 20px rgba(130,20,130,.35),
-    inset 0 2px 2px rgba(255,255,255,.4);
-
-  transition:.25s;
+    0 7px 18px rgba(133,25,117,.35),
+    inset 0 2px 5px rgba(255,255,255,.35);
 }
 
-.open:active{
-  transform:scale(.96);
-}
-
-.footer{
-  text-align:center;
-  margin-top:18px;
-  color:#a52b7f;
+.bottom-text{
+  margin:13px 0 22px;
+  color:#9a397e;
   font-size:18px;
+  font-weight:bold;
 }
 
-/* BALON */
-.balloon{
+/* BALON & LOVE */
+.floating{
   position:fixed;
+  left:0;
   bottom:-100px;
-  width:45px;
-  height:58px;
-  border-radius:50%;
-  z-index:9999;
-  animation:rise 5s linear forwards;
-}
-
-.balloon:after{
-  content:"";
-  position:absolute;
-  width:1px;
-  height:70px;
-  background:#777;
-  top:55px;
-  left:50%;
+  pointer-events:none;
+  z-index:100;
+  animation:rise linear forwards;
 }
 
 @keyframes rise{
   0%{
     transform:translateY(0) rotate(0deg);
-    opacity:1;
+    opacity:0;
   }
+  10%{opacity:1}
   100%{
-    transform:translateY(-120vh) rotate(18deg);
+    transform:translateY(-120vh) rotate(15deg);
     opacity:0;
   }
 }
 
-/* LOVE */
-.love{
-  position:fixed;
-  bottom:-50px;
-  z-index:9998;
-  font-size:35px;
-  animation:loveRise 4s ease-out forwards;
-  pointer-events:none;
-}
-
-@keyframes loveRise{
-  0%{
-    transform:translateY(0) scale(.7);
-    opacity:1;
-  }
-  100%{
-    transform:translateY(-110vh) scale(1.3);
-    opacity:0;
-  }
-}
-
-/* MOBILE */
-@media(max-width:500px){
-
-  .page{
-    width:92vw;
-    padding:20px 12px 25px;
-  }
-
-  .top-title{
-    font-size:12px;
-    letter-spacing:4px;
-  }
-
-  h1{
-    font-size:58px;
-  }
-
-  .name{
-    font-size:24px;
-  }
-
-  .cake{
-    transform:scale(.88);
-    transform-origin:top center;
-    margin-bottom:-30px;
-  }
-
-  .number{
-    font-size:120px;
-  }
-
-  .special{
-    font-size:22px;
-  }
-
-  .gift{
-    transform:scale(.85);
-    margin-top:-5px;
-    margin-bottom:-5px;
-  }
-
-  .open{
-    font-size:20px;
-    padding:14px 20px;
-  }
+/* Responsif HP kecil */
+@media(max-height:700px){
+  .page{padding:8px}
+  .card{min-height:calc(100vh - 16px)}
+  .ribbon{height:48px}
+  .small-title{font-size:12px}
+  h1{font-size:62px}
+  .name{font-size:23px}
+  .cake-area{height:220px;transform:scale(.8)}
+  .age{font-size:85px}
+  .gift{font-size:90px}
+  .special{font-size:20px}
+  .gift-button{font-size:20px;padding:10px 25px}
 }
 </style>
 </head>
@@ -512,209 +404,243 @@ h1{
 <body>
 
 <div class="page">
+<div class="card">
 
-  <div class="decor d1">♡</div>
-  <div class="decor d2">✦</div>
-  <div class="decor d3">♡</div>
-  <div class="decor d4">✦</div>
+<div class="sparkle s1">♡</div>
+<div class="sparkle s2">✦</div>
+<div class="sparkle s3">♡</div>
+<div class="sparkle s4">✦</div>
 
-  <div class="bow">
-    <div class="bow-center">♥</div>
-  </div>
+<div class="ribbon">
+  <div class="heart">♥</div>
+</div>
 
-  <div class="top-title">
-    ♥ A LITTLE BIRTHDAY GIFT ♥
-  </div>
+<div class="small-title">♥ A LITTLE BIRTHDAY GIFT ♥</div>
 
-  <h1>
-    Happy<br>
-    Birthday
-  </h1>
+<h1>Happy<br>Birthday</h1>
 
-  <div class="name">
-    Arsya Surya Sanjaya
-  </div>
+<div class="name">
+  Arsya Surya Sanjaya
+</div>
 
-  <div class="cake-area">
+<!-- KUE -->
+<div class="cake-area">
 
-    <div class="cake">
+  <div class="cake" id="cake">
 
-      <div
-        class="candle"
-        id="candle"
-        onclick="blowCandle()"
-        title="Tekan lilinnya"
-      >
-        <div class="flame" id="flame"></div>
-      </div>
-
-      <div class="cake-body">
-        <div class="cream"></div>
-
-        <div class="sprinkles">
-          🍓 🩷 🍓 🩷 🍓
-        </div>
-      </div>
-
+    <div class="candle" id="candle">
+      <div class="wick"></div>
+      <div class="flame" id="flame"></div>
     </div>
 
-  </div>
+    <div class="cake-top"></div>
 
-  <div class="number">
-    19
-  </div>
+    <div class="cream"></div>
 
-  <div class="instruction">
-    Tekan lilinnya 🕯️
-  </div>
+    <div class="cake-body"></div>
 
-  <div class="separator">
-    <span></span>
-    <b>♥</b>
-    <span></span>
-  </div>
+    <div class="cherry c1">🍓</div>
+    <div class="cherry c2">🍓</div>
+    <div class="cherry c3">🍓</div>
+    <div class="cherry c4">🍓</div>
 
-  <div class="special">
-    Untuk seseorang yang<br>
-    spesial 🤍
-  </div>
-
-  <!-- KADO -->
-  <div class="gift">
-
-    <div class="gift-lid">
-      <div class="ribbon-h"></div>
-    </div>
-
-    <div class="gift-box">
-      <div class="ribbon-v"></div>
-    </div>
-
-    <div class="ribbon">
-      🎀
-    </div>
-
-  </div>
-
-  <!-- MENUJU VIDEO -->
-  <a class="open" href="public/gift.html">
-    🎁 &nbsp; Buka Hadiah
-  </a>
-
-  <div class="footer">
-    Ada sesuatu yang spesial untukmu ♥
   </div>
 
 </div>
 
+<div class="age">19</div>
+
+<div class="instruction">
+  Tekan lilinnya 🕯️
+</div>
+
+<div class="divider">
+  <span></span>
+  <b>♥</b>
+  <span></span>
+</div>
+
+<div class="special">
+  Untuk seseorang yang<br>
+  spesial 🤍
+</div>
+
+<div class="gift">🎁</div>
+
+<a class="gift-button" href="public/gift.html">
+  🎁 &nbsp; Buka Hadiah
+</a>
+
+<div class="bottom-text">
+  Ada sesuatu yang spesial untukmu ♥
+</div>
+
+</div>
+</div>
+
 <script>
 
-let candlePressed = false;
+/* =====================================
+   LILIN
+===================================== */
 
-function blowCandle(){
+const candle = document.getElementById("candle");
+const flame = document.getElementById("flame");
 
-  if(candlePressed) return;
+let birthdayStarted = false;
 
-  candlePressed = true;
+candle.addEventListener("click", function(e){
 
-  // Matikan api
-  document.getElementById("flame").classList.add("off");
+  e.stopPropagation();
 
-  // BALON
-  const balloonColors=[
-    "#ff4fa3",
-    "#b85cff",
-    "#ff8ad8",
-    "#8e63ff",
-    "#ff5d7d",
-    "#d86cff"
+  if(birthdayStarted) return;
+
+  birthdayStarted = true;
+
+  /* matikan api */
+  flame.classList.add("off");
+
+  /* balon + love */
+  createCelebration();
+
+  /* musik */
+  playHappyBirthday();
+
+});
+
+
+/* =====================================
+   BALON DAN LOVE
+===================================== */
+
+function createCelebration(){
+
+  const items = [
+    "🎈",
+    "🎈",
+    "🎈",
+    "🎈",
+    "🎈",
+    "🤍",
+    "🤍",
+    "🤍",
+    "💗",
+    "💜",
+    "✨",
+    "🎈",
+    "🤍",
+    "🎈",
+    "💗",
+    "🤍"
   ];
 
-  for(let i=0;i<18;i++){
+  for(let i=0;i<items.length;i++){
 
-    setTimeout(function(){
+    setTimeout(()=>{
 
-      const balloon=document.createElement("div");
+      const el=document.createElement("div");
 
-      balloon.className="balloon";
+      el.className="floating";
 
-      balloon.style.left=(Math.random()*90+3)+"%";
+      el.textContent=items[i];
 
-      balloon.style.background=
-        balloonColors[
-          Math.floor(Math.random()*balloonColors.length)
-        ];
+      el.style.left=(5+Math.random()*90)+"%";
 
-      balloon.style.animationDuration=
-        (4+Math.random()*3)+"s";
+      el.style.fontSize=(25+Math.random()*30)+"px";
 
-      document.body.appendChild(balloon);
+      el.style.animationDuration=(5+Math.random()*4)+"s";
+
+      document.body.appendChild(el);
 
       setTimeout(()=>{
-        balloon.remove();
-      },7500);
+        el.remove();
+      },10000);
 
-    },i*120);
+    },i*180);
 
   }
+}
 
-  // LOVE PUTIH
-  for(let i=0;i<15;i++){
 
-    setTimeout(function(){
+/* =====================================
+   MUSIK HAPPY BIRTHDAY
+   Dibuat dengan Web Audio sehingga
+   tidak membutuhkan file MP3 tambahan.
+===================================== */
 
-      const love=document.createElement("div");
+function playHappyBirthday(){
 
-      love.className="love";
-      love.innerHTML="🤍";
+  const AudioContext =
+    window.AudioContext ||
+    window.webkitAudioContext;
 
-      love.style.left=(Math.random()*90+3)+"%";
+  if(!AudioContext) return;
 
-      love.style.animationDuration=
-        (3+Math.random()*2)+"s";
+  const ctx=new AudioContext();
 
-      document.body.appendChild(love);
+  const notes = [
+    [392,0.00],
+    [392,0.25],
+    [440,0.50],
+    [392,0.75],
+    [523,1.00],
+    [494,1.25],
 
-      setTimeout(()=>{
-        love.remove();
-      },6000);
+    [392,1.75],
+    [392,2.00],
+    [440,2.25],
+    [392,2.50],
+    [587,2.75],
+    [523,3.00],
 
-    },i*160);
+    [392,3.50],
+    [392,3.75],
+    [784,4.00],
+    [659,4.25],
+    [523,4.50],
+    [494,4.75],
+    [440,5.00],
 
-  }
+    [698,5.50],
+    [698,5.75],
+    [659,6.00],
+    [523,6.25],
+    [587,6.50],
+    [523,6.75]
+  ];
 
-  // efek tambahan
-  for(let i=0;i<20;i++){
+  notes.forEach(note=>{
 
-    setTimeout(function(){
+    const osc=ctx.createOscillator();
+    const gain=ctx.createGain();
 
-      const spark=document.createElement("div");
+    osc.type="sine";
 
-      spark.innerHTML="✦";
-      spark.style.position="fixed";
-      spark.style.left=(Math.random()*100)+"%";
-      spark.style.bottom="-30px";
-      spark.style.fontSize="25px";
-      spark.style.color="#fff";
-      spark.style.zIndex="9999";
-      spark.style.pointerEvents="none";
-      spark.style.transition="4s ease-out";
+    osc.frequency.value=note[0];
 
-      document.body.appendChild(spark);
+    gain.gain.setValueAtTime(
+      0,
+      ctx.currentTime+note[1]
+    );
 
-      setTimeout(()=>{
-        spark.style.transform=
-          "translateY(-100vh) rotate(360deg)";
-        spark.style.opacity="0";
-      },50);
+    gain.gain.linearRampToValueAtTime(
+      0.18,
+      ctx.currentTime+note[1]+0.02
+    );
 
-      setTimeout(()=>{
-        spark.remove();
-      },4500);
+    gain.gain.exponentialRampToValueAtTime(
+      0.001,
+      ctx.currentTime+note[1]+0.22
+    );
 
-    },i*100);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
 
-  }
+    osc.start(ctx.currentTime+note[1]);
+
+    osc.stop(ctx.currentTime+note[1]+0.25);
+
+  });
 
 }
 
