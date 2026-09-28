@@ -1,95 +1,148 @@
-<!-- KUE ULANG TAHUN -->
+<!-- BIRTHDAY SCENE -->
 <div id="birthdayScene">
 
   <div class="birthday-title">
-    <h2>Happy Special Day</h2>
-    <h1>Arsya Surya Sanjaya</h1>
-    <div class="age">19</div>
+    <div class="special-day">Happy Special Day</div>
+    <div class="birthday-name">Arsya Surya Sanjaya</div>
   </div>
 
-  <div class="cake" id="cake">
-    <div class="candle">🕯️</div>
-    <div class="cake-body">🎂</div>
+  <div class="cake-area" id="cakeArea">
+    <div class="candle" id="candle">🕯️</div>
+    <div class="cake">🎂</div>
   </div>
 
-  <p id="candleText">Tekan kuenya 🎂</p>
+  <div id="instruction">
+    Tekan lilinnya 🕯️
+  </div>
+
+  <div class="gift-area">
+    <div class="gift-icon">🎁</div>
+
+    <a href="public/gift.html" class="gift-button">
+      Buka Hadiah
+    </a>
+
+    <div class="gift-text">
+      Ada sesuatu untukmu 💗
+    </div>
+  </div>
 
 </div>
 
 <style>
 #birthdayScene {
   text-align: center;
-  margin: 25px auto;
   position: relative;
-  min-height: 430px;
   overflow: hidden;
+  padding: 25px 10px 40px;
+  min-height: 650px;
 }
 
-.birthday-title h2 {
-  margin: 5px 0;
-  color: #d94f87;
+/* JUDUL */
+.special-day {
+  font-size: 42px;
+  font-weight: 900;
+  color: #f062a6;
+  line-height: 1.1;
+  text-shadow: 0 3px 8px rgba(240, 98, 166, .25);
+}
+
+.birthday-name {
   font-size: 25px;
+  font-weight: 700;
+  color: #c94d82;
+  margin-top: 8px;
 }
 
-.birthday-title h1 {
-  margin: 5px 10px 0;
-  color: #b83268;
-  font-size: 24px;
-}
-
-.age {
-  font-size: 70px;
-  font-weight: bold;
-  color: #e85d9e;
-  margin-top: 0;
-}
-
-.cake {
-  display: inline-block;
+/* AREA KUE */
+.cake-area {
   position: relative;
+  display: inline-block;
+  margin-top: 30px;
+  padding: 25px;
   cursor: pointer;
-  margin-top: 5px;
-  padding: 10px;
-  user-select: none;
-  transition: transform .2s;
   z-index: 5;
 }
 
-.cake:active {
-  transform: scale(1.12);
-}
-
-.cake-body {
-  font-size: 115px;
+.cake {
+  font-size: 170px;
   line-height: 1;
+  filter: drop-shadow(0 8px 10px rgba(0,0,0,.15));
+  transition: transform .2s;
 }
 
+.cake-area:active .cake {
+  transform: scale(1.08);
+}
+
+/* LILIN */
 .candle {
   position: absolute;
-  top: -20px;
+  z-index: 10;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 42px;
+  font-size: 55px;
+  cursor: pointer;
+  transition: transform .2s;
 }
 
-#candleText {
-  color: #d94f87;
+.candle:active {
+  transform: translateX(-50%) scale(1.2);
+}
+
+#instruction {
+  color: #d6538b;
   font-weight: bold;
-  margin-top: 0;
+  font-size: 17px;
+  margin-top: 5px;
 }
 
+/* HADIAH */
+.gift-area {
+  margin-top: 35px;
+}
+
+.gift-icon {
+  font-size: 55px;
+}
+
+.gift-button {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 14px 32px;
+  border-radius: 30px;
+  background: #f3a0c5;
+  color: white;
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,.15);
+}
+
+.gift-button:active {
+  transform: scale(.96);
+}
+
+.gift-text {
+  margin-top: 8px;
+  color: #c94d82;
+  font-size: 14px;
+}
+
+/* BALON */
 .flying-balloon {
   position: absolute;
-  bottom: -80px;
-  font-size: 45px;
-  z-index: 10;
+  bottom: -100px;
+  font-size: 48px;
+  z-index: 20;
   pointer-events: none;
-  animation: flyUp linear forwards;
+  animation: balloonUp linear forwards;
 }
 
-@keyframes flyUp {
+@keyframes balloonUp {
   0% {
-    bottom: -80px;
+    bottom: -100px;
     opacity: 0;
     transform: translateX(0) rotate(0deg);
   }
@@ -99,105 +152,128 @@
   }
 
   50% {
-    transform: translateX(40px) rotate(8deg);
+    transform: translateX(45px) rotate(10deg);
   }
 
   100% {
     bottom: 110%;
     opacity: 0;
-    transform: translateX(-40px) rotate(-8deg);
+    transform: translateX(-45px) rotate(-10deg);
   }
 }
 
+/* HATI PUTIH */
 .flying-heart {
   position: fixed;
-  bottom: 20px;
-  font-size: 25px;
-  pointer-events: none;
+  bottom: -40px;
+  font-size: 30px;
   z-index: 9999;
-  animation: heartUp 2.5s ease-out forwards;
+  pointer-events: none;
+  animation: heartUp linear forwards;
 }
 
 @keyframes heartUp {
   0% {
-    transform: translateY(0) scale(.7);
+    bottom: -40px;
+    opacity: 0;
+    transform: scale(.7);
+  }
+
+  15% {
     opacity: 1;
   }
 
   100% {
-    transform: translateY(-80vh) scale(1.3);
+    bottom: 110vh;
     opacity: 0;
+    transform: translateX(40px) scale(1.3);
   }
 }
 </style>
 
 <script>
-const cake = document.getElementById("cake");
-const candleText = document.getElementById("candleText");
+const candle = document.getElementById("candle");
+const birthdayScene = document.getElementById("birthdayScene");
+const instruction = document.getElementById("instruction");
 
-let musicStarted = false;
+let birthdayStarted = false;
 
-/* Musik Happy Birthday */
+/* MUSIK HAPPY BIRTHDAY TO YOU */
 function playHappyBirthday() {
 
-  if (musicStarted) return;
-  musicStarted = true;
+  if (birthdayStarted) return;
+  birthdayStarted = true;
 
   const AudioContext =
     window.AudioContext || window.webkitAudioContext;
 
   if (!AudioContext) return;
 
-  const audioCtx = new AudioContext();
+  const audio = new AudioContext();
 
+  /*
+   * Melodi Happy Birthday:
+   * Happy birthday to you...
+   */
   const notes = [
-    264,264,297,264,352,330,
-    264,264,297,264,396,352,
-    264,264,528,440,352,330,297,
-    466,466,440,352,396,352
+    [264,.25],[264,.25],[297,.5],[264,.5],
+    [352,.5],[330,1],
+
+    [264,.25],[264,.25],[297,.5],[264,.5],
+    [396,.5],[352,1],
+
+    [264,.25],[264,.25],[528,.5],[440,.5],
+    [352,.5],[330,.5],[297,1],
+
+    [466,.25],[466,.25],[440,.5],[352,.5],
+    [396,.5],[352,1]
   ];
 
-  let time = audioCtx.currentTime;
+  let startTime = audio.currentTime;
 
-  notes.forEach((frequency, index) => {
+  notes.forEach(function(note) {
 
-    const oscillator = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
+    const oscillator = audio.createOscillator();
+    const gain = audio.createGain();
 
     oscillator.type = "sine";
-    oscillator.frequency.value = frequency;
+    oscillator.frequency.value = note[0];
 
-    gain.gain.setValueAtTime(0.001, time);
+    gain.gain.setValueAtTime(.001, startTime);
     gain.gain.exponentialRampToValueAtTime(
-      0.18,
-      time + 0.03
+      .18,
+      startTime + .03
     );
 
     gain.gain.exponentialRampToValueAtTime(
-      0.001,
-      time + 0.38
+      .001,
+      startTime + note[1] - .03
     );
 
     oscillator.connect(gain);
-    gain.connect(audioCtx.destination);
+    gain.connect(audio.destination);
 
-    oscillator.start(time);
-    oscillator.stop(time + 0.4);
+    oscillator.start(startTime);
+    oscillator.stop(startTime + note[1]);
 
-    time += 0.42;
+    startTime += note[1] + .04;
   });
 }
 
-/* Saat kue ditekan */
-cake.addEventListener("click", function() {
+/* KETIKA LILIN DITEKAN */
+candle.addEventListener("click", function(event) {
 
-  candleText.innerHTML =
-    "🎉 Happy Birthday Arsya! 🎈💗";
+  event.stopPropagation();
 
+  instruction.innerHTML =
+    "🎉 Happy Birthday to You! 🤍🎈";
+
+  /* Putar musik */
   playHappyBirthday();
 
-  /* Balon keluar dari bawah */
+  /* Balon */
   const balloons = [
+    "🎈","🎈","🎈","🎈","🎈",
     "🎈","🎈","🎈","🎈","🎈",
     "🎈","🎈","🎈","🎈","🎈",
     "🎈","🎈","🎈","🎈","🎈"
@@ -211,41 +287,43 @@ cake.addEventListener("click", function() {
     balloon.innerHTML = symbol;
 
     balloon.style.left =
-      (5 + Math.random() * 90) + "%";
+      (Math.random() * 92) + "%";
 
     balloon.style.animationDuration =
       (3 + Math.random() * 3) + "s";
 
     balloon.style.animationDelay =
-      (index * 0.12) + "s";
+      (index * .12) + "s";
 
-    document.getElementById("birthdayScene")
-      .appendChild(balloon);
+    birthdayScene.appendChild(balloon);
 
     setTimeout(function() {
       balloon.remove();
     }, 7000);
   });
 
-  /* Efek hati */
-  for (let i = 0; i < 18; i++) {
+  /* HATI PUTIH 🤍 */
+  for (let i = 0; i < 25; i++) {
 
     const heart = document.createElement("div");
 
     heart.className = "flying-heart";
-    heart.innerHTML = "💗";
+    heart.innerHTML = "🤍";
 
     heart.style.left =
       (Math.random() * 100) + "vw";
 
+    heart.style.animationDuration =
+      (2.5 + Math.random() * 2) + "s";
+
     heart.style.animationDelay =
-      (Math.random() * 1) + "s";
+      (Math.random() * 1.5) + "s";
 
     document.body.appendChild(heart);
 
     setTimeout(function() {
       heart.remove();
-    }, 3500);
+    }, 5000);
   }
 
 });
