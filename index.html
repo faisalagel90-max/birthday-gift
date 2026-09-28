@@ -609,6 +609,146 @@ document.querySelectorAll(".heart").forEach(function(heart) {
     💝 Buka Hadiah
   </a>
 </div>
-    
+    <!-- KUE ULANG TAHUN -->
+<div id="birthdayScene">
+  <div class="balloon b1">🎈</div>
+  <div class="balloon b2">🎈</div>
+  <div class="balloon b3">🎈</div>
+
+  <div class="cake">
+    <div class="candle" id="candle">🕯️</div>
+    <div class="cake-top"></div>
+    <div class="cake-body">🎂</div>
+  </div>
+
+  <p id="candleText">Tekan lilinnya 🕯️</p>
+</div>
+
+<style>
+#birthdayScene {
+  text-align: center;
+  margin: 30px auto;
+  position: relative;
+  min-height: 260px;
+  overflow: hidden;
+}
+
+.cake {
+  position: relative;
+  display: inline-block;
+  margin-top: 35px;
+  cursor: pointer;
+}
+
+.cake-body {
+  font-size: 100px;
+  line-height: 1;
+}
+
+.candle {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 42px;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.candle:active {
+  transform: translateX(-50%) scale(1.2);
+}
+
+#candleText {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #d94f87;
+  font-weight: bold;
+}
+
+.balloon {
+  position: absolute;
+  font-size: 45px;
+  animation: floatBalloon 4s ease-in-out infinite;
+}
+
+.b1 {
+  left: 10%;
+  top: 50px;
+}
+
+.b2 {
+  right: 12%;
+  top: 80px;
+  animation-delay: 1s;
+}
+
+.b3 {
+  left: 45%;
+  top: 10px;
+  animation-delay: 2s;
+}
+
+@keyframes floatBalloon {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+}
+
+.blow {
+  animation: blowCandle .5s forwards;
+}
+
+@keyframes blowCandle {
+  to {
+    opacity: .3;
+    transform: translateX(-50%) scale(.7);
+  }
+}
+</style>
+
+<script>
+document.getElementById("candle").addEventListener("click", function () {
+  this.classList.add("blow");
+
+  document.getElementById("candleText").innerHTML =
+    "🎉 Selamat ulang tahun! 🎈💗";
+
+  document.querySelectorAll(".balloon").forEach(function(balloon, index) {
+    balloon.style.animationDuration = (2 + index) + "s";
+    balloon.style.transform = "translateY(-80px)";
+  });
+
+  // Efek hati
+  for (let i = 0; i < 15; i++) {
+    const heart = document.createElement("div");
+    heart.innerHTML = "💗";
+    heart.style.position = "fixed";
+    heart.style.left = (Math.random() * 100) + "vw";
+    heart.style.top = "70vh";
+    heart.style.fontSize = "24px";
+    heart.style.zIndex = "9999";
+    heart.style.pointerEvents = "none";
+    heart.style.transition = "all 2s ease";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+      heart.style.top = "20vh";
+      heart.style.opacity = "0";
+      heart.style.transform =
+        "translateX(" + ((Math.random() - .5) * 200) + "px)";
+    }, 50);
+
+    setTimeout(function() {
+      heart.remove();
+    }, 2200);
+  }
+});
+</script>
 </body>
 </html>
