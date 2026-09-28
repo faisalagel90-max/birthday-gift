@@ -13,78 +13,103 @@
 
 body {
   margin: 0;
-  padding: 25px 15px 50px;
-  background: linear-gradient(180deg, #ffd6e5, #fff0f5);
+  min-height: 100vh;
   font-family: Georgia, serif;
-  color: #54283d;
+  background: linear-gradient(180deg, #ffd6e5, #fff0f5);
+  color: #5a3045;
+  padding: 25px 15px 50px;
 }
 
 .container {
-  max-width: 600px;
+  max-width: 650px;
   margin: auto;
 }
 
 .card {
   background: rgba(255,255,255,0.92);
-  border-radius: 28px;
-  padding: 25px 20px;
-  margin-bottom: 25px;
-  box-shadow: 0 10px 30px rgba(130,50,90,0.15);
+  border-radius: 30px;
+  padding: 28px 20px;
+  box-shadow: 0 10px 35px rgba(150,70,100,0.18);
+  text-align: center;
+}
+
+.ribbon {
+  font-size: 55px;
+  margin-bottom: 5px;
 }
 
 h1 {
-  text-align: center;
-  color: #d94f8a;
-  margin-top: 0;
+  font-size: 34px;
+  color: #d63378;
+  margin: 10px 0;
 }
 
 .subtitle {
-  text-align: center;
-  color: #8b526b;
+  font-size: 18px;
   line-height: 1.7;
+  margin-bottom: 25px;
 }
 
 .video-box {
-  margin-top: 20px;
-  overflow: hidden;
+  width: 100%;
   border-radius: 20px;
-  background: #24151d;
+  overflow: hidden;
+  background: #000;
+  margin: 20px 0;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 video {
   display: block;
   width: 100%;
-  max-height: 600px;
+  height: auto;
 }
 
 .message {
-  text-align: center;
-  line-height: 1.9;
   font-size: 17px;
+  line-height: 1.8;
+  margin: 25px 5px;
+}
+
+.divider {
+  width: 80px;
+  height: 3px;
+  background: #e85d93;
+  margin: 25px auto;
+  border-radius: 10px;
+}
+
+h2 {
+  color: #d63378;
+  font-size: 25px;
 }
 
 label {
   display: block;
-  margin: 18px 0 8px;
+  text-align: left;
+  margin: 15px 5px 7px;
   font-weight: bold;
-  color: #b83d72;
 }
 
 input,
 textarea {
   width: 100%;
   padding: 14px;
-  border: 1px solid #e5a4bd;
-  border-radius: 14px;
-  background: #fff8fb;
-  color: #54283d;
+  border: 2px solid #f3b6cc;
+  border-radius: 15px;
   font-family: Georgia, serif;
   font-size: 16px;
   outline: none;
+  background: #fffafd;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #df5b91;
 }
 
 textarea {
-  min-height: 150px;
+  min-height: 140px;
   resize: vertical;
 }
 
@@ -94,26 +119,56 @@ button {
   padding: 15px;
   border: none;
   border-radius: 30px;
-  background: #dc5790;
+  background: #df4f88;
   color: white;
-  font-family: Georgia, serif;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: bold;
+  font-family: Georgia, serif;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(200,60,110,0.25);
+}
+
+button:active {
+  transform: scale(0.98);
 }
 
 .saved {
   display: none;
-  text-align: center;
-  margin-top: 15px;
-  color: #c63f77;
+  margin-top: 18px;
+  padding: 15px;
+  border-radius: 15px;
+  background: #ffe1ec;
+  color: #9d315e;
+  line-height: 1.6;
 }
 
 .back {
-  display: block;
-  text-align: center;
-  color: #b83d72;
-  text-decoration: none;
+  display: inline-block;
   margin-top: 25px;
+  color: #c73570;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.heart {
+  position: fixed;
+  pointer-events: none;
+  animation: naik 5s linear forwards;
+  opacity: 0.7;
+}
+
+@keyframes naik {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
 }
 </style>
 </head>
@@ -122,128 +177,81 @@ button {
 
 <div class="container">
 
-  <!-- VIDEO -->
   <div class="card">
 
-    <h1>🎁 Sebuah Hadiah Untukmu</h1>
+    <div class="ribbon">🎀</div>
+
+    <h1>Hadiah Kecil Untukmu 💗</h1>
 
     <p class="subtitle">
-      Ada sedikit sesuatu yang ingin aku berikan untukmu.
-      🤍
+      Ada sesuatu yang ingin aku sampaikan<br>
+      lewat sebuah video kecil ini.
     </p>
+
+    <div class="divider"></div>
 
     <div class="video-box">
       <video controls playsinline>
-        <source src="video.mp4" type="video/mp4">
-        Video tidak dapat diputar.
+        <source src="video_hadiah_720p.mp4" type="video/mp4">
+        Browser kamu tidak mendukung video.
       </video>
     </div>
 
-  </div>
-
-
-  <!-- PESAN -->
-  <div class="card">
-
-    <h1>💌 Untukmu</h1>
-
     <p class="message">
-      Selamat ulang tahun yang ke-19 🤍
-      <br><br>
-
-      Semoga bertambahnya usia membawa lebih banyak
-      kebahagiaan, keberanian, dan hal-hal baik
-      dalam hidupmu.
-      <br><br>
-
-      Semoga semua langkah yang kamu pilih
-      membawa kamu semakin dekat dengan
-      impian-impianmu.
-      <br><br>
-
-      Dan semoga halaman kecil ini
-      bisa menjadi salah satu kenangan
-      yang tersimpan dengan baik. 🌷
+      Semoga video ini bisa menjadi salah satu
+      kenangan kecil yang membuatmu tersenyum.
+      Terima kasih sudah menjadi bagian dari
+      cerita yang pernah begitu berarti. 🤍
     </p>
 
-  </div>
+    <div class="divider"></div>
 
+    <h2>💌 Tulis Doa & Harapan</h2>
 
-  <!-- DOA -->
-  <div class="card">
-
-    <h1>🙏 Doa & Harapan</h1>
-
-    <p class="subtitle">
-      Tuliskan doa dan harapanmu untuk usia 19 tahun.
+    <p>
+      Sebelum meninggalkan halaman ini,
+      tuliskan satu doa atau harapan untuk dirimu sendiri.
     </p>
 
-    <label>Namamu</label>
+    <form id="wishForm">
 
-    <input
-      type="text"
-      id="nama"
-      placeholder="Tulis namamu..."
-    >
+      <label for="nama">Nama</label>
 
-    <label>Doa & Harapan</label>
+      <input
+        type="text"
+        id="nama"
+        placeholder="Tulis namamu..."
+        required
+      >
 
-    <textarea
-      id="harapan"
-      placeholder="Tuliskan doa dan harapanmu di sini..."
-    ></textarea>
+      <label for="harapan">Doa & Harapan</label>
 
-    <button onclick="simpanHarapan()">
-      💗 Simpan Doa & Harapan
-    </button>
+      <textarea
+        id="harapan"
+        placeholder="Tuliskan doa dan harapanmu di sini..."
+        required
+      ></textarea>
+
+      <button type="submit">
+        💗 Simpan Doa & Harapan
+      </button>
+
+    </form>
 
     <div class="saved" id="saved">
-      Doa & harapanmu sudah tersimpan 🤍
+      ✨ Terima kasih sudah menuliskan doa dan harapanmu.
+      <br>
+      Semoga semuanya satu per satu menjadi kenyataan. 🤍
     </div>
 
-  </div>
+    <a class="back" href="../index.html">
+      ← Kembali ke halaman utama
+    </a>
 
-  <a class="back" href="../index.html">
-    ← Kembali ke halaman utama
-  </a>
+  </div>
 
 </div>
 
-
 <script>
 
-function simpanHarapan() {
-
-  const nama = document.getElementById("nama").value;
-  const harapan = document.getElementById("harapan").value;
-
-  if (nama.trim() === "" || harapan.trim() === "") {
-    alert("Silakan isi nama dan doa & harapan terlebih dahulu 🤍");
-    return;
-  }
-
-  localStorage.setItem("birthdayName", nama);
-  localStorage.setItem("birthdayWish", harapan);
-
-  document.getElementById("saved").style.display = "block";
-}
-
-window.onload = function() {
-
-  const nama = localStorage.getItem("birthdayName");
-  const harapan = localStorage.getItem("birthdayWish");
-
-  if (nama) {
-    document.getElementById("nama").value = nama;
-  }
-
-  if (harapan) {
-    document.getElementById("harapan").value = harapan;
-  }
-
-};
-
-</script>
-
-</body>
-</html>
+const form = document.getElementById("wish
