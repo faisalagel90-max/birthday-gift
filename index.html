@@ -3,400 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Happy Birthday Arsya Surya Sanjaya</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  -webkit-tap-highlight-color:transparent;
+* {
+  box-sizing: border-box;
 }
 
-html,body{
-  margin:0;
-  padding:0;
-  width:100%;
-  min-height:100%;
-  font-family:Georgia,"Times New Roman",serif;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #8d3ca5;
 }
 
-body{
-  background:
-    radial-gradient(circle at 50% 0%,#c95bd8 0%,#8b36a9 42%,#55166f 100%);
-  overflow-x:hidden;
-  color:#7d216e;
+.page {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  line-height: 0;
 }
 
-/* AREA UTAMA */
-.page{
-  position:relative;
-  width:min(100%,760px);
-  min-height:100vh;
-  margin:0 auto;
-  padding:20px 14px;
+.design {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-/* KARTU PINK */
-.card{
-  position:relative;
-  min-height:calc(100vh - 40px);
-  border-radius:38px;
-  border:3px solid rgba(255,255,255,.8);
-  background:
-    linear-gradient(
-      180deg,
-      #ffd9ec 0%,
-      #ffc9e5 45%,
-      #f7afd5 100%
-    );
-  box-shadow:
-    0 0 0 2px rgba(255,148,218,.45),
-    0 15px 45px rgba(54,0,70,.45);
-  overflow:hidden;
-  text-align:center;
+.hotspot {
+  position: absolute;
+  display: block;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Hiasan */
-.sparkle{
-  position:absolute;
-  color:white;
-  opacity:.9;
-  font-size:25px;
-  animation:twinkle 2s infinite alternate;
+/* Area lilin pada gambar */
+.candle {
+  left: 43%;
+  top: 49%;
+  width: 15%;
+  height: 13%;
 }
 
-.s1{top:25px;left:22px}
-.s2{top:42px;right:20px}
-.s3{bottom:35px;left:22px}
-.s4{bottom:55px;right:20px}
-
-@keyframes twinkle{
-  from{transform:scale(.8);opacity:.45}
-  to{transform:scale(1.2);opacity:1}
+/* Area tombol Buka Hadiah pada bagian bawah */
+.gift {
+  left: 15%;
+  top: 82%;
+  width: 70%;
+  height: 12%;
 }
 
-/* PITA */
-.ribbon{
-  position:relative;
-  margin:-2px auto 4px;
-  width:175px;
-  height:62px;
+.message {
+  position: fixed;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%) translateY(20px);
+  background: rgba(255,255,255,.95);
+  color: #9d267e;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s;
+  z-index: 20;
+  box-shadow: 0 5px 20px rgba(0,0,0,.2);
 }
 
-.ribbon:before,
-.ribbon:after{
-  content:"";
-  position:absolute;
-  top:5px;
-  width:78px;
-  height:43px;
-  background:linear-gradient(145deg,#ff9ed2,#d9349b);
-  border-radius:55% 10% 55% 10%;
-}
-
-.ribbon:before{
-  left:5px;
-  transform:rotate(20deg);
-}
-
-.ribbon:after{
-  right:5px;
-  transform:rotate(-20deg);
-}
-
-.heart{
-  position:absolute;
-  z-index:3;
-  left:50%;
-  top:12px;
-  transform:translateX(-50%);
-  width:45px;
-  height:45px;
-  border-radius:50%;
-  background:linear-gradient(#ff9bd4,#df2997);
-  border:3px solid #ffd9ef;
-  box-shadow:0 3px 12px #c52a8e;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:25px;
-  color:white;
-}
-
-/* TEKS */
-.small-title{
-  margin-top:2px;
-  font-size:16px;
-  letter-spacing:7px;
-  font-weight:bold;
-  color:#b42c82;
-}
-
-h1{
-  margin:12px 0 0;
-  font-size:clamp(65px,15vw,105px);
-  line-height:.82;
-  color:#c02086;
-  text-shadow:
-    2px 3px 0 #f79acb,
-    0 6px 15px rgba(135,25,103,.25);
-  font-weight:bold;
-}
-
-.name{
-  margin:16px 15px 4px;
-  font-size:clamp(25px,6vw,43px);
-  font-weight:bold;
-  color:#70256e;
-}
-
-/* KUE */
-.cake-area{
-  position:relative;
-  margin:12px auto 0;
-  width:min(88%,520px);
-  height:290px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.cake{
-  position:relative;
-  width:270px;
-  height:180px;
-  cursor:pointer;
-  user-select:none;
-  filter:drop-shadow(0 12px 12px rgba(100,25,90,.2));
-}
-
-.cake-top{
-  position:absolute;
-  top:45px;
-  left:10px;
-  width:250px;
-  height:65px;
-  border-radius:50%;
-  background:
-    radial-gradient(circle at 25% 35%,#fff 0 5%,transparent 6%),
-    radial-gradient(circle at 55% 25%,#c759c8 0 7%,transparent 8%),
-    radial-gradient(circle at 75% 45%,#fff 0 7%,transparent 8%),
-    #ffd5ea;
-  border:5px solid #e76bb4;
-  z-index:3;
-}
-
-.cake-body{
-  position:absolute;
-  left:18px;
-  top:78px;
-  width:234px;
-  height:88px;
-  background:linear-gradient(#ffc8e4,#ff91c9);
-  border:5px solid #df58aa;
-  border-top:none;
-  border-radius:0 0 35px 35px;
-  z-index:2;
-}
-
-.cream{
-  position:absolute;
-  left:20px;
-  top:83px;
-  width:225px;
-  height:30px;
-  background:white;
-  border-radius:50%;
-  z-index:4;
-  opacity:.95;
-}
-
-.candle{
-  position:absolute;
-  left:50%;
-  top:0;
-  transform:translateX(-50%);
-  width:30px;
-  height:78px;
-  background:repeating-linear-gradient(
-    135deg,
-    #fff 0 9px,
-    #ff66b8 9px 17px
-  );
-  border-radius:7px;
-  border:3px solid #ed8ac5;
-  z-index:8;
-  cursor:pointer;
-}
-
-.wick{
-  position:absolute;
-  top:-13px;
-  left:50%;
-  transform:translateX(-50%);
-  width:4px;
-  height:14px;
-  background:#5e4050;
-}
-
-.flame{
-  position:absolute;
-  top:-52px;
-  left:50%;
-  transform:translateX(-50%);
-  width:30px;
-  height:42px;
-  background:linear-gradient(#fff,#ffd34d,#ff7b00);
-  border-radius:55% 55% 55% 55%;
-  box-shadow:0 0 20px #ffb300;
-  animation:flicker .15s infinite alternate;
-}
-
-.flame.off{
-  display:none;
-}
-
-@keyframes flicker{
-  from{transform:translateX(-50%) scale(.92)}
-  to{transform:translateX(-50%) scale(1.08)}
-}
-
-.cherry{
-  position:absolute;
-  z-index:6;
-  font-size:32px;
-}
-
-.c1{left:35px;top:20px}
-.c2{right:35px;top:15px}
-.c3{left:95px;top:10px}
-.c4{right:85px;top:25px}
-
-/* ANGKA 19 */
-.age{
-  margin-top:-2px;
-  font-size:clamp(90px,20vw,145px);
-  line-height:.8;
-  font-weight:bold;
-  color:#f28ac4;
-  text-shadow:
-    2px 3px 0 #d94fa8,
-    0 5px 12px rgba(130,30,100,.25);
-}
-
-.instruction{
-  margin-top:4px;
-  font-size:18px;
-  font-weight:bold;
-  color:#8a387a;
-}
-
-/* GARIS */
-.divider{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:16px;
-  margin:10px auto;
-}
-
-.divider span{
-  width:80px;
-  height:3px;
-  background:#c95b9f;
-}
-
-.divider b{
-  color:#a72579;
-  font-size:27px;
-}
-
-/* TEKS */
-.special{
-  margin:4px auto 5px;
-  color:white;
-  font-size:25px;
-  line-height:1.05;
-  font-weight:bold;
-  text-shadow:0 2px 5px rgba(100,20,80,.25);
-}
-
-/* KADO */
-.gift{
-  font-size:125px;
-  line-height:1;
-  cursor:pointer;
-  filter:drop-shadow(0 9px 8px rgba(90,20,80,.2));
-  transition:.2s;
-}
-
-.gift:active{
-  transform:scale(.94);
-}
-
-/* BUTTON */
-.gift-button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  margin-top:4px;
-  padding:13px 35px;
-  min-width:270px;
-  border-radius:50px;
-  border:3px solid rgba(255,255,255,.65);
-  background:linear-gradient(90deg,#ed36a4,#a33ad1);
-  color:white;
-  text-decoration:none;
-  font-size:25px;
-  font-weight:bold;
-  box-shadow:
-    0 7px 18px rgba(133,25,117,.35),
-    inset 0 2px 5px rgba(255,255,255,.35);
-}
-
-.bottom-text{
-  margin:13px 0 22px;
-  color:#9a397e;
-  font-size:18px;
-  font-weight:bold;
-}
-
-/* BALON & LOVE */
-.floating{
-  position:fixed;
-  left:0;
-  bottom:-100px;
-  pointer-events:none;
-  z-index:100;
-  animation:rise linear forwards;
-}
-
-@keyframes rise{
-  0%{
-    transform:translateY(0) rotate(0deg);
-    opacity:0;
-  }
-  10%{opacity:1}
-  100%{
-    transform:translateY(-120vh) rotate(15deg);
-    opacity:0;
-  }
-}
-
-/* Responsif HP kecil */
-@media(max-height:700px){
-  .page{padding:8px}
-  .card{min-height:calc(100vh - 16px)}
-  .ribbon{height:48px}
-  .small-title{font-size:12px}
-  h1{font-size:62px}
-  .name{font-size:23px}
-  .cake-area{height:220px;transform:scale(.8)}
-  .age{font-size:85px}
-  .gift{font-size:90px}
-  .special{font-size:20px}
-  .gift-button{font-size:20px;padding:10px 25px}
+.message.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 </style>
 </head>
@@ -404,246 +87,40 @@ h1{
 <body>
 
 <div class="page">
-<div class="card">
 
-<div class="sparkle s1">♡</div>
-<div class="sparkle s2">✦</div>
-<div class="sparkle s3">♡</div>
-<div class="sparkle s4">✦</div>
+  <img
+    class="design"
+    src="public/birthday-design.jpg"
+    alt="Happy Birthday Arsya Surya Sanjaya"
+  >
 
-<div class="ribbon">
-  <div class="heart">♥</div>
-</div>
+  <button
+    class="hotspot candle"
+    aria-label="Tekan lilin"
+    onclick="tekanLilin()">
+  </button>
 
-<div class="small-title">♥ A LITTLE BIRTHDAY GIFT ♥</div>
-
-<h1>Happy<br>Birthday</h1>
-
-<div class="name">
-  Arsya Surya Sanjaya
-</div>
-
-<!-- KUE -->
-<div class="cake-area">
-
-  <div class="cake" id="cake">
-
-    <div class="candle" id="candle">
-      <div class="wick"></div>
-      <div class="flame" id="flame"></div>
-    </div>
-
-    <div class="cake-top"></div>
-
-    <div class="cream"></div>
-
-    <div class="cake-body"></div>
-
-    <div class="cherry c1">🍓</div>
-    <div class="cherry c2">🍓</div>
-    <div class="cherry c3">🍓</div>
-    <div class="cherry c4">🍓</div>
-
-  </div>
+  <a
+    class="hotspot gift"
+    href="public/gift.html"
+    aria-label="Buka hadiah">
+  </a>
 
 </div>
 
-<div class="age">19</div>
-
-<div class="instruction">
-  Tekan lilinnya 🕯️
-</div>
-
-<div class="divider">
-  <span></span>
-  <b>♥</b>
-  <span></span>
-</div>
-
-<div class="special">
-  Untuk seseorang yang<br>
-  spesial 🤍
-</div>
-
-<div class="gift">🎁</div>
-
-<a class="gift-button" href="public/gift.html">
-  🎁 &nbsp; Buka Hadiah
-</a>
-
-<div class="bottom-text">
-  Ada sesuatu yang spesial untukmu ♥
-</div>
-
-</div>
+<div id="message" class="message">
+  🎂 Lilinnya sudah ditekan 💗
 </div>
 
 <script>
+function tekanLilin() {
+  const message = document.getElementById("message");
+  message.classList.add("show");
 
-/* =====================================
-   LILIN
-===================================== */
-
-const candle = document.getElementById("candle");
-const flame = document.getElementById("flame");
-
-let birthdayStarted = false;
-
-candle.addEventListener("click", function(e){
-
-  e.stopPropagation();
-
-  if(birthdayStarted) return;
-
-  birthdayStarted = true;
-
-  /* matikan api */
-  flame.classList.add("off");
-
-  /* balon + love */
-  createCelebration();
-
-  /* musik */
-  playHappyBirthday();
-
-});
-
-
-/* =====================================
-   BALON DAN LOVE
-===================================== */
-
-function createCelebration(){
-
-  const items = [
-    "🎈",
-    "🎈",
-    "🎈",
-    "🎈",
-    "🎈",
-    "🤍",
-    "🤍",
-    "🤍",
-    "💗",
-    "💜",
-    "✨",
-    "🎈",
-    "🤍",
-    "🎈",
-    "💗",
-    "🤍"
-  ];
-
-  for(let i=0;i<items.length;i++){
-
-    setTimeout(()=>{
-
-      const el=document.createElement("div");
-
-      el.className="floating";
-
-      el.textContent=items[i];
-
-      el.style.left=(5+Math.random()*90)+"%";
-
-      el.style.fontSize=(25+Math.random()*30)+"px";
-
-      el.style.animationDuration=(5+Math.random()*4)+"s";
-
-      document.body.appendChild(el);
-
-      setTimeout(()=>{
-        el.remove();
-      },10000);
-
-    },i*180);
-
-  }
+  setTimeout(() => {
+    message.classList.remove("show");
+  }, 2500);
 }
-
-
-/* =====================================
-   MUSIK HAPPY BIRTHDAY
-   Dibuat dengan Web Audio sehingga
-   tidak membutuhkan file MP3 tambahan.
-===================================== */
-
-function playHappyBirthday(){
-
-  const AudioContext =
-    window.AudioContext ||
-    window.webkitAudioContext;
-
-  if(!AudioContext) return;
-
-  const ctx=new AudioContext();
-
-  const notes = [
-    [392,0.00],
-    [392,0.25],
-    [440,0.50],
-    [392,0.75],
-    [523,1.00],
-    [494,1.25],
-
-    [392,1.75],
-    [392,2.00],
-    [440,2.25],
-    [392,2.50],
-    [587,2.75],
-    [523,3.00],
-
-    [392,3.50],
-    [392,3.75],
-    [784,4.00],
-    [659,4.25],
-    [523,4.50],
-    [494,4.75],
-    [440,5.00],
-
-    [698,5.50],
-    [698,5.75],
-    [659,6.00],
-    [523,6.25],
-    [587,6.50],
-    [523,6.75]
-  ];
-
-  notes.forEach(note=>{
-
-    const osc=ctx.createOscillator();
-    const gain=ctx.createGain();
-
-    osc.type="sine";
-
-    osc.frequency.value=note[0];
-
-    gain.gain.setValueAtTime(
-      0,
-      ctx.currentTime+note[1]
-    );
-
-    gain.gain.linearRampToValueAtTime(
-      0.18,
-      ctx.currentTime+note[1]+0.02
-    );
-
-    gain.gain.exponentialRampToValueAtTime(
-      0.001,
-      ctx.currentTime+note[1]+0.22
-    );
-
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-
-    osc.start(ctx.currentTime+note[1]);
-
-    osc.stop(ctx.currentTime+note[1]+0.25);
-
-  });
-
-}
-
 </script>
 
 </body>
