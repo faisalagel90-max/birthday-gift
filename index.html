@@ -124,7 +124,8 @@ function tekanLilin() {
     message.classList.add("show");
 
     /* 🎈 BALON */
-    for (let i = 0; i < 100; i++) {
+  setTimeout (() => {
+    for (let i = 0; i < 5; i++) {
 
         const balon = document.createElement("div");
 
@@ -145,11 +146,12 @@ function tekanLilin() {
 
         setTimeout(() => {
             balon.remove();
-        }, 50000);
+        }, 200);
     }
 
     /* 🤍 HATI */
-    for (let i = 0; i < 150; i++) {
+    setTimeout (() => {
+    for (let i = 0; i < 5; i++) {
 
         const hati = document.createElement("div");
 
@@ -170,7 +172,7 @@ function tekanLilin() {
 
         setTimeout(() => {
             hati.remove();
-        }, 50000);
+        }, 300);
     }
 
     /* 🎵 MUSIK HAPPY BIRTHDAY */
