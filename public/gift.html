@@ -668,6 +668,61 @@ form button:active{
         font-size:22px;
     }
 }
+  /* ✨ STIKER SCRAPBOOK TAMBAHAN ✨ */
+
+.card{
+    overflow:visible;
+}
+
+.card .small-title::before{
+    content:"🌷  ✦  ♡";
+    display:block;
+    margin-bottom:8px;
+    font-size:18px;
+    letter-spacing:5px;
+    opacity:.8;
+}
+
+.video-box::after{
+    content:"🎀";
+    position:absolute;
+    right:-13px;
+    bottom:-15px;
+    font-size:30px;
+    transform:rotate(12deg);
+    filter:drop-shadow(0 3px 3px rgba(80,40,70,.15));
+}
+
+.message{
+    transform:rotate(.5deg);
+}
+
+form{
+    transform:rotate(-.4deg);
+}
+
+form::after{
+    content:"♡  ✿  ♡";
+    display:block;
+    margin-top:15px;
+    text-align:center;
+    color:#d28cab;
+    font-size:17px;
+    letter-spacing:5px;
+}
+
+/* Efek kertas kecil */
+.video-box,
+.message,
+form{
+    position:relative;
+}
+
+.video-box::before,
+.message::before,
+form::before{
+    text-shadow:0 1px 1px rgba(120,70,100,.08);
+}
 </style>
 </head>
 
