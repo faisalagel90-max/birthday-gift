@@ -211,17 +211,17 @@ document.head.appendChild(style);
 
 
 /* 🎵 HAPPY BIRTHDAY */
+const lagu = new Audio("public/lagu.mp3");
+lagu.preload = "auto";
+lagu.volume = 1.0;
+
 function mainkanHappyBirthday() {
-
-    const lagu = new Audio("public/lagu.mp3");
-
-    lagu.volume = 1.0;
     lagu.currentTime = 0;
 
     lagu.play().catch(error => {
-        console.log("Musik tidak dapat diputar:", error);
+        console.log("Musik gagal diputar:", error);
     });
-  }
+}
 </script>
 </body>
 </html>
