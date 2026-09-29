@@ -1070,7 +1070,322 @@ form{
     backdrop-filter:none !important;
     -webkit-backdrop-filter:none !important;
   }
-  
+  /* ===== HEADER SPECIAL DAY ===== */
+
+.special-title{
+    position:relative;
+    margin:15px auto 18px;
+    padding:18px 25px 20px;
+    max-width:90%;
+    text-align:center;
+
+    font-family:"Segoe Script","Brush Script MT",cursive;
+    font-size:34px;
+    font-weight:600;
+    line-height:1.15;
+    letter-spacing:1px;
+
+    color:#70458f;
+
+    background:rgba(190,170,235,.55);
+    border-radius:35px;
+    border:2px solid rgba(255,255,255,.65);
+
+    box-shadow:
+        0 8px 18px rgba(120,70,150,.15),
+        inset 0 0 18px rgba(255,255,255,.35);
+}
+
+.special-title::before{
+    content:"♡  ✦";
+    position:absolute;
+    left:-12px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:25px;
+    color:#8d4d91;
+}
+
+.special-title::after{
+    content:"✦  ♡";
+    position:absolute;
+    right:-12px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:25px;
+    color:#8d4d91;
+}
+
+
+/* ===== BINGKAI TULISAN VIDEO ===== */
+
+.video-intro{
+    position:relative;
+    width:90%;
+    margin:0 auto 25px;
+    padding:16px 20px;
+
+    text-align:center;
+
+    font-family:"Segoe Script","Brush Script MT",cursive;
+    font-size:21px;
+    line-height:1.45;
+    color:#70458f;
+
+    background:rgba(255,190,220,.65);
+
+    border:2px solid rgba(255,255,255,.75);
+    border-radius:28px;
+
+    box-shadow:
+        0 7px 15px rgba(150,80,130,.16),
+        inset 0 0 12px rgba(255,255,255,.35);
+}
+
+.video-intro::before{
+    content:"🌷";
+    position:absolute;
+    left:10px;
+    top:-14px;
+    font-size:25px;
+}
+
+.video-intro::after{
+    content:"♡  ✦";
+    position:absolute;
+    right:10px;
+    bottom:-12px;
+    font-size:23px;
+    color:#9b4f91;
+}
+
+
+/* ===== PITA VIDEO TIDAK TERPOTONG ===== */
+
+.video-box{
+    position:relative;
+    overflow:visible !important;
+    margin-top:45px !important;
+}
+
+.video-box::before{
+    z-index:10;
+    transform:translateX(-50%) scale(.9);
+  }
+  /* ===== FINAL TAMPILAN HADIAH ===== */
+
+.page{
+    position:relative;
+    padding-top:20px !important;
+}
+
+/* Judul utama */
+.special-title{
+    position:relative;
+    margin:5px auto 18px !important;
+    padding:18px 20px 20px !important;
+    max-width:90%;
+    text-align:center;
+
+    font-family:"Segoe Script","Brush Script MT",cursive !important;
+    font-size:36px !important;
+    font-weight:600 !important;
+    line-height:1.15 !important;
+    letter-spacing:.5px;
+
+    color:#70458f !important;
+
+    background:rgba(187,174,245,.78) !important;
+    border-radius:32px 32px 25px 25px !important;
+
+    box-shadow:
+        0 8px 18px rgba(130,80,160,.18),
+        inset 0 0 0 2px rgba(255,255,255,.45);
+
+    text-shadow:1px 2px 2px rgba(255,255,255,.45) !important;
+}
+
+/* Hiasan kiri-kanan judul */
+.special-title::before{
+    content:"🌷  ✦  ♡";
+    position:absolute;
+    left:-5px;
+    top:50%;
+    transform:translate(-100%,-50%);
+    font-size:23px;
+    white-space:nowrap;
+}
+
+.special-title::after{
+    content:"♡  ✦  🌷";
+    position:absolute;
+    right:-5px;
+    top:50%;
+    transform:translate(100%,-50%);
+    font-size:23px;
+    white-space:nowrap;
+}
+
+/* Bingkai tulisan pembuka */
+.video-intro{
+    position:relative;
+    margin:0 auto 28px !important;
+    width:88% !important;
+    padding:18px 20px !important;
+
+    text-align:center;
+
+    font-family:"Segoe Script","Brush Script MT",cursive !important;
+    font-size:20px !important;
+    font-weight:500 !important;
+    line-height:1.45 !important;
+
+    color:#70458f !important;
+
+    background:rgba(246,181,214,.78) !important;
+
+    border:2px solid rgba(255,255,255,.65);
+    border-radius:28px !important;
+
+    box-shadow:
+        0 7px 15px rgba(150,80,150,.16),
+        inset 0 0 0 1px rgba(180,110,180,.12);
+}
+
+/* Hiasan kecil di sekitar bingkai */
+.video-intro::before{
+    content:"♡  ✦";
+    position:absolute;
+    left:-18px;
+    top:-13px;
+    font-size:25px;
+    color:#9b4f91;
+}
+
+.video-intro::after{
+    content:"✦  ♡";
+    position:absolute;
+    right:-18px;
+    bottom:-13px;
+    font-size:25px;
+    color:#9b4f91;
+}
+
+/* Kotak video */
+.video-box{
+    position:relative !important;
+    overflow:visible !important;
+    margin-top:45px !important;
+    padding:12px !important;
+
+    background:rgba(255,240,249,.95) !important;
+    border:4px solid #ef9bc3 !important;
+    border-radius:30px !important;
+
+    box-shadow:
+        0 10px 22px rgba(145,70,130,.22),
+        0 0 0 5px rgba(255,255,255,.55);
+}
+
+/* Video tetap di dalam bingkai */
+.video-box video{
+    display:block;
+    width:100% !important;
+    border-radius:22px !important;
+    position:relative;
+    z-index:2;
+}
+
+/* Pita di atas video — dibuat utuh dan tidak terpotong */
+.video-box::before{
+    content:"🎀";
+    position:absolute;
+    z-index:10;
+    left:50%;
+    top:-38px;
+
+    transform:translateX(-50%);
+
+    font-size:62px;
+    line-height:1;
+
+    filter:drop-shadow(0 4px 4px rgba(100,50,100,.18));
+    pointer-events:none;
+}
+
+/* Pita kecil sudut kanan bawah */
+.video-box::after{
+    content:"🎀";
+    position:absolute;
+    z-index:10;
+    right:-13px;
+    bottom:-16px;
+
+    font-size:35px;
+    transform:rotate(-12deg);
+
+    pointer-events:none;
+}
+
+/* Judul video lama disembunyikan agar tidak bertabrakan */
+.video-title{
+    display:none !important;
+}
+
+/* Tampilan card agar lebih scrapbook */
+.card{
+    position:relative;
+}
+
+/* Hiasan bunga kecil di area atas */
+.card::before{
+    content:"🌷     ✦     ♡";
+    position:absolute;
+    top:5px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:5;
+
+    font-size:21px;
+    white-space:nowrap;
+    pointer-events:none;
+}
+
+/* Penyesuaian HP */
+@media(max-width:600px){
+
+    .special-title{
+        font-size:32px !important;
+        padding:20px 14px !important;
+    }
+
+    .special-title::before{
+        left:2px;
+        transform:translate(-85%,-50%);
+        font-size:18px;
+    }
+
+    .special-title::after{
+        right:2px;
+        transform:translate(85%,-50%);
+        font-size:18px;
+    }
+
+    .video-intro{
+        width:88% !important;
+        font-size:19px !important;
+        padding:16px 14px !important;
+    }
+
+    .video-box{
+        margin-top:48px !important;
+    }
+
+    .video-box::before{
+        font-size:55px;
+        top:-35px;
+    }
+  }
 </style>
 </head>
 
@@ -1080,25 +1395,15 @@ form{
 
   <div class="card">
 
-    <div class="small-title">
-<div class="small-title">
-    ♡ Happy Special Day Cantik 🤍 ♡
+<div class="special-title">
+    ♡ Happy Special Day<br>
+    Cantik 🤍 ♡
 </div>
 
-<h1 class="title">
-    Happy Special Day Cantik 🤍
-</h1>
-
-<div class="subtitle">
-    Ini aku buatkan video buat kado ulang tahunmu kali ini ♡
+<div class="video-intro">
+    Ini aku buatkan video buat kado<br>
+    ulang tahunmu kali ini ♡
 </div>
-
-<!-- VIDEO -->
-
-<div class="video-title">
-    🎀 Untukmu, di hari spesialmu ♡
-</div>
-
     <div class="video-box">
 
       <video
