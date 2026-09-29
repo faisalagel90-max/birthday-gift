@@ -725,6 +725,321 @@ form{
 form::before{
     text-shadow:0 1px 1px rgba(120,70,100,.08);
 }
+  /* ===== SCRAPBOOK PINK BIRTHDAY ===== */
+
+html,body{
+    min-height:100%;
+}
+
+body{
+    background:
+        url("scrapbook-bg.png") center top / cover fixed no-repeat !important;
+    background-color:#f7c9d9 !important;
+    color:#7d3f70 !important;
+    font-family:Georgia,"Times New Roman",serif !important;
+    overflow-x:hidden;
+}
+
+/* Halaman utama */
+.page{
+    width:100% !important;
+    max-width:900px !important;
+    margin:0 auto !important;
+    padding:42px 20px 60px !important;
+}
+
+/* Kartu utama dibuat transparan agar background scrapbook terlihat */
+.card{
+    width:100% !important;
+    max-width:850px !important;
+    margin:0 auto !important;
+    padding:35px 28px 45px !important;
+    background:rgba(255,225,235,.58) !important;
+    border:2px solid rgba(255,255,255,.75) !important;
+    border-radius:30px !important;
+    box-shadow:
+        0 12px 35px rgba(122,55,105,.18),
+        inset 0 0 25px rgba(255,255,255,.35) !important;
+    backdrop-filter:blur(3px);
+    overflow:visible !important;
+}
+
+/* Judul paling atas */
+.small-title{
+    font-size:0 !important;
+    color:#813b76 !important;
+    text-align:center !important;
+    margin:0 auto 32px !important;
+    padding:0 !important;
+    letter-spacing:0 !important;
+}
+
+.small-title::before{
+    content:"♡  Happy Special Day ya Cantik  ♡";
+    display:block;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:38px;
+    line-height:1.18;
+    font-weight:bold;
+    color:#813b76;
+    text-shadow:1px 2px 0 rgba(255,255,255,.7);
+    margin-bottom:18px;
+}
+
+.small-title::after{
+    content:"Ini aku buatkan video buat kado ulang tahunmu kali ini ♡";
+    display:block;
+    max-width:650px;
+    margin:0 auto;
+    padding:13px 25px;
+    border-radius:25px;
+    background:rgba(241,157,193,.45);
+    color:#874477;
+    font-size:20px;
+    line-height:1.5;
+    font-weight:normal;
+    box-shadow:0 5px 12px rgba(130,58,112,.10);
+}
+
+/* Hilangkan judul lama */
+.title,
+.subtitle{
+    display:none !important;
+}
+
+/* Judul video lama tidak diperlukan */
+.video-title{
+    display:none !important;
+}
+
+/* Video seperti foto Polaroid scrapbook */
+.video-box{
+    width:100% !important;
+    max-width:720px !important;
+    margin:45px auto 48px !important;
+    padding:14px !important;
+    background:#fff5f8 !important;
+    border:3px solid #f3b8d0 !important;
+    border-radius:24px !important;
+    box-shadow:
+        0 10px 22px rgba(112,55,95,.20),
+        6px 7px 0 rgba(241,170,199,.55) !important;
+    transform:rotate(-1deg);
+}
+
+/* Pita kecil di atas video */
+.video-box::before{
+    content:"🎀";
+    position:absolute;
+    top:-34px;
+    left:50%;
+    transform:translateX(-50%) rotate(1deg);
+    font-size:54px;
+    z-index:5;
+    text-shadow:0 4px 7px rgba(100,50,80,.18);
+}
+
+/* Video */
+.video-box video{
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    aspect-ratio:16/9 !important;
+    object-fit:cover !important;
+    display:block !important;
+    border-radius:15px !important;
+    background:#000 !important;
+}
+
+/* Kartu pesan */
+.message{
+    max-width:650px !important;
+    margin:40px auto 35px !important;
+    padding:30px 28px !important;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,245,248,.96),
+            rgba(250,205,221,.88)
+        ) !important;
+    border:3px solid #f0b1cc !important;
+    border-radius:25px !important;
+    color:#743866 !important;
+    text-align:center !important;
+    box-shadow:
+        0 9px 20px rgba(112,55,95,.18),
+        5px 6px 0 rgba(239,164,194,.55) !important;
+    font-size:18px !important;
+    line-height:1.6 !important;
+}
+
+/* Hiasan atas kartu pesan */
+.message::before{
+    content:"♡  ─── ♥ ───  ♡";
+    display:block;
+    position:static !important;
+    transform:none !important;
+    margin:0 auto 14px;
+    color:#a44586 !important;
+    font-size:22px !important;
+    text-align:center;
+}
+
+/* Form */
+form{
+    max-width:650px !important;
+    margin:30px auto 0 !important;
+    padding:25px 22px 28px !important;
+    background:rgba(255,235,242,.92) !important;
+    border:3px solid #f0b1cc !important;
+    border-radius:24px !important;
+    box-shadow:
+        0 8px 18px rgba(112,55,95,.16),
+        4px 5px 0 rgba(239,164,194,.48) !important;
+}
+
+/* Judul form */
+form::before{
+    content:"💌  Tulis Doa & Harapan";
+    display:block;
+    text-align:center;
+    margin:-5px auto 22px;
+    color:#873d76;
+    font-size:28px;
+    font-weight:bold;
+    line-height:1.3;
+}
+
+/* Label */
+form label{
+    color:#873d76 !important;
+    font-weight:bold !important;
+    font-size:15px !important;
+}
+
+/* Input dan textarea */
+form input,
+form textarea{
+    width:100% !important;
+    background:rgba(255,250,252,.95) !important;
+    border:2px solid #efb6cf !important;
+    border-radius:16px !important;
+    color:#713664 !important;
+    padding:13px 15px !important;
+    font-family:Georgia,"Times New Roman",serif !important;
+    font-size:15px !important;
+    outline:none !important;
+    box-shadow:inset 0 2px 7px rgba(140,65,110,.07) !important;
+}
+
+form textarea{
+    min-height:110px !important;
+    resize:vertical !important;
+}
+
+form input:focus,
+form textarea:focus{
+    border-color:#c45b9d !important;
+    box-shadow:0 0 0 3px rgba(196,91,157,.12) !important;
+}
+
+/* Tombol */
+form button,
+button[type="submit"]{
+    display:block !important;
+    width:80% !important;
+    max-width:390px !important;
+    margin:24px auto 0 !important;
+    padding:14px 25px !important;
+    border:none !important;
+    border-radius:40px !important;
+    background:linear-gradient(90deg,#e62d78,#9237c8) !important;
+    color:white !important;
+    font-family:Georgia,"Times New Roman",serif !important;
+    font-size:20px !important;
+    font-weight:bold !important;
+    box-shadow:
+        0 7px 16px rgba(132,47,128,.28),
+        inset 0 1px 3px rgba(255,255,255,.55) !important;
+    cursor:pointer !important;
+    transition:.2s ease !important;
+}
+
+form button:hover,
+button[type="submit"]:hover{
+    transform:translateY(-2px) !important;
+}
+
+/* Pesan berhasil */
+.success{
+    max-width:600px !important;
+    margin:30px auto !important;
+    padding:25px !important;
+    background:rgba(255,235,244,.95) !important;
+    border:2px solid #e6a8c5 !important;
+    border-radius:22px !important;
+    color:#77386d !important;
+    text-align:center !important;
+    box-shadow:0 8px 20px rgba(112,55,95,.15) !important;
+}
+
+/* Link kembali */
+.back{
+    color:#873d76 !important;
+    font-weight:bold !important;
+}
+
+/* Tampilan HP */
+@media(max-width:600px){
+
+    .page{
+        padding:28px 13px 45px !important;
+    }
+
+    .card{
+        padding:28px 14px 35px !important;
+        border-radius:25px !important;
+    }
+
+    .small-title::before{
+        font-size:31px;
+    }
+
+    .small-title::after{
+        font-size:17px;
+        padding:11px 17px;
+    }
+
+    .video-box{
+        margin-top:42px !important;
+        padding:10px !important;
+        border-radius:20px !important;
+    }
+
+    .video-box::before{
+        font-size:43px;
+        top:-29px;
+    }
+
+    .message{
+        padding:25px 18px !important;
+        font-size:16px !important;
+    }
+
+    form{
+        padding:22px 15px 25px !important;
+    }
+
+    form::before{
+        font-size:24px;
+    }
+
+    form button,
+    button[type="submit"]{
+        width:90% !important;
+        font-size:18px !important;
+    }
+}
 </style>
 </head>
 
