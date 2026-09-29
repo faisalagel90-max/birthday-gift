@@ -263,6 +263,411 @@ button:active{
 
   font-size:15px;
 }
+  /* =====================================================
+   SCRAPBOOK BIRTHDAY GIFT DESIGN
+   TAMPILAN SAJA — FITUR TIDAK DIUBAH
+   ===================================================== */
+
+html, body{
+    margin:0;
+    padding:0;
+    min-height:100%;
+}
+
+body{
+    background:
+        radial-gradient(circle at 10% 15%, rgba(255,255,255,.8) 0 2px, transparent 3px),
+        radial-gradient(circle at 85% 25%, rgba(255,255,255,.65) 0 2px, transparent 3px),
+        radial-gradient(circle at 25% 80%, rgba(255,255,255,.55) 0 2px, transparent 3px),
+        linear-gradient(135deg,#f7c8d8,#efd0df 45%,#dfbdd7);
+    background-size:55px 55px,75px 75px,90px 90px,100% 100%;
+    font-family:Georgia,"Times New Roman",serif;
+    color:#6d4964;
+}
+
+/* Kertas scrapbook utama */
+.page{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    padding:35px 16px 55px;
+    overflow:hidden;
+}
+
+/* Dekorasi bunga kiri atas */
+.page::before{
+    content:"🌸";
+    position:absolute;
+    top:15px;
+    left:12px;
+    font-size:42px;
+    transform:rotate(-15deg);
+    opacity:.85;
+    z-index:0;
+}
+
+/* Dekorasi bunga kanan bawah */
+.page::after{
+    content:"🌷";
+    position:absolute;
+    right:8px;
+    bottom:20px;
+    font-size:45px;
+    transform:rotate(12deg);
+    opacity:.75;
+    z-index:0;
+}
+
+/* Kartu kertas */
+.card{
+    position:relative;
+    z-index:2;
+    max-width:520px;
+    margin:0 auto;
+    padding:28px 20px 32px;
+    border-radius:28px;
+    background:
+        linear-gradient(rgba(255,255,255,.92),rgba(255,246,250,.95));
+    border:2px solid rgba(255,255,255,.95);
+    box-shadow:
+        0 18px 45px rgba(119,67,102,.20),
+        0 4px 0 rgba(255,255,255,.55);
+}
+
+/* Pita scrapbook di atas */
+.card::before{
+    content:"🎀";
+    position:absolute;
+    top:-27px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:58px;
+    filter:drop-shadow(0 5px 5px rgba(100,50,80,.15));
+}
+
+/* Hiasan kecil */
+.card::after{
+    content:"♡   ✦   ♡";
+    position:absolute;
+    top:18px;
+    right:18px;
+    color:#d38bad;
+    font-size:17px;
+    letter-spacing:3px;
+}
+
+/* =========================
+   JUDUL ATAS
+   ========================= */
+
+/* A LITTLE BIRTHDAY GIFT diganti visualnya */
+.small-title{
+    margin-top:18px;
+    font-size:0;
+    color:#9a6684;
+    text-align:center;
+    letter-spacing:1px;
+}
+
+.small-title::after{
+    content:"Happy Special Day ya Cantik 🤍";
+    font-size:24px;
+    font-weight:bold;
+    line-height:1.3;
+    color:#8a5877;
+}
+
+/* Judul utama lama disembunyikan */
+.title{
+    font-size:0 !important;
+    margin:8px 0 10px !important;
+    text-align:center;
+}
+
+.title::after{
+    content:"Ini aku buatkan video buat kado ulang tahunmu kali ini";
+    display:block;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:15px;
+    font-weight:normal;
+    line-height:1.6;
+    letter-spacing:.2px;
+    color:#a16d8c;
+    padding:0 12px;
+}
+
+/* Nama Arsya tidak ditampilkan di bagian atas */
+.subtitle{
+    display:none !important;
+}
+
+/* =========================
+   VIDEO
+   ========================= */
+
+.video-title{
+    display:none !important;
+}
+
+.video-box{
+    position:relative;
+    margin:24px auto 26px;
+    padding:8px;
+    max-width:470px;
+    background:#fff;
+    border:1px solid #e9bfd3;
+    border-radius:18px;
+    box-shadow:
+        0 8px 20px rgba(112,66,99,.15),
+        5px 5px 0 rgba(218,167,193,.35);
+    transform:rotate(-1deg);
+}
+
+.video-box::before{
+    content:"♡  memories  ♡";
+    position:absolute;
+    top:-25px;
+    left:50%;
+    transform:translateX(-50%) rotate(1deg);
+    white-space:nowrap;
+    font-family:"Courier New",monospace;
+    font-size:11px;
+    color:#a87591;
+    letter-spacing:1px;
+}
+
+.video-box video{
+    display:block;
+    width:100%;
+    border-radius:12px;
+    background:#f2d9e5;
+}
+
+/* =========================
+   PESAN ULANG TAHUN
+   ========================= */
+
+.message{
+    position:relative;
+    margin:30px 3px 25px;
+    padding:27px 21px;
+    background:
+        linear-gradient(145deg,#fffafc,#fcecf4);
+    border-radius:18px;
+    border:1px solid #efc8da;
+    box-shadow:
+        0 7px 18px rgba(120,70,105,.12),
+        -5px 5px 0 rgba(218,170,196,.25);
+    color:#77516c;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:15px;
+    line-height:1.8;
+    text-align:center;
+}
+
+/* Judul kecil pada kartu pesan */
+.message::before{
+    content:"19, Arsya. ♡";
+    display:block;
+    margin-bottom:12px;
+    font-size:25px;
+    font-weight:bold;
+    color:#9b5f82;
+}
+
+/* Pita kecil */
+.message::after{
+    content:"✦";
+    position:absolute;
+    top:-12px;
+    right:18px;
+    width:27px;
+    height:27px;
+    line-height:27px;
+    border-radius:50%;
+    background:#e7a8c5;
+    color:white;
+    font-size:14px;
+    box-shadow:0 3px 7px rgba(100,50,80,.15);
+}
+
+/* =========================
+   FORM
+   ========================= */
+
+form{
+    position:relative;
+    margin-top:30px;
+    padding:25px 18px 22px;
+    border-radius:22px;
+    background:rgba(255,255,255,.78);
+    border:2px dashed #dda8c2;
+    box-shadow:0 7px 20px rgba(100,60,90,.10);
+}
+
+form::before{
+    content:"Tulis Doa & Harapan";
+    display:block;
+    margin-bottom:20px;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    color:#8f5b79;
+    letter-spacing:.3px;
+}
+
+/* Label */
+form label{
+    display:block;
+    margin:13px 0 7px;
+    color:#8b5c77;
+    font-weight:bold;
+    font-size:14px;
+}
+
+/* Input & textarea */
+form input,
+form textarea{
+    width:100%;
+    border:1px solid #e4b6cc;
+    border-radius:14px;
+    padding:13px 14px;
+    background:#fffafb;
+    color:#704b63;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:14px;
+    outline:none;
+    box-shadow:inset 0 2px 7px rgba(130,70,105,.05);
+}
+
+form input:focus,
+form textarea:focus{
+    border-color:#c985a9;
+    box-shadow:0 0 0 3px rgba(213,143,176,.15);
+}
+
+form textarea{
+    min-height:115px;
+    resize:vertical;
+}
+
+/* Placeholder */
+form input::placeholder,
+form textarea::placeholder{
+    color:#c09aae;
+}
+
+/* =========================
+   TOMBOL
+   ========================= */
+
+form button{
+    width:100%;
+    margin-top:18px;
+    padding:14px 20px;
+    border:0;
+    border-radius:999px;
+    background:linear-gradient(135deg,#d887ae,#9e72bb);
+    color:white;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:16px;
+    font-weight:bold;
+    letter-spacing:.3px;
+    box-shadow:
+        0 8px 16px rgba(143,84,128,.22),
+        inset 0 1px 0 rgba(255,255,255,.4);
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+form button:hover{
+    transform:translateY(-2px);
+}
+
+form button:active{
+    transform:scale(.98);
+}
+
+/* =========================
+   PESAN BERHASIL
+   ========================= */
+
+.success{
+    margin:25px 3px;
+    padding:25px 20px;
+    border-radius:20px;
+    background:linear-gradient(145deg,#fff8fb,#f7e4ef);
+    border:1px solid #dfb0c8;
+    color:#80556f;
+    text-align:center;
+    line-height:1.7;
+    box-shadow:0 8px 20px rgba(110,65,95,.12);
+}
+
+/* =========================
+   KEMBALI
+   ========================= */
+
+.back{
+    display:block !important;
+    width:max-content;
+    margin:25px auto 0 !important;
+    padding:9px 17px;
+    border-radius:999px;
+    background:rgba(255,255,255,.65);
+    border:1px solid #dfb2c9;
+    color:#8e607b !important;
+    text-decoration:none !important;
+    font-size:13px !important;
+    box-shadow:0 4px 10px rgba(100,60,90,.08);
+}
+
+/* =========================
+   DEKORASI SCRAPBOOK
+   ========================= */
+
+.card{
+    background-image:
+        radial-gradient(rgba(170,105,145,.08) .7px, transparent .7px);
+    background-size:9px 9px;
+}
+
+/* Responsif HP */
+@media(max-width:480px){
+
+    .page{
+        padding:32px 12px 45px;
+    }
+
+    .card{
+        padding:25px 15px 28px;
+        border-radius:25px;
+    }
+
+    .small-title::after{
+        font-size:21px;
+    }
+
+    .title::after{
+        font-size:14px;
+    }
+
+    .message{
+        padding:24px 16px;
+    }
+
+    .message::before{
+        font-size:23px;
+    }
+
+    form{
+        padding:22px 15px 20px;
+    }
+
+    form::before{
+        font-size:22px;
+    }
+}
 </style>
 </head>
 
