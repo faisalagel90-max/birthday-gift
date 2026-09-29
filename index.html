@@ -213,9 +213,7 @@ document.head.appendChild(style);
 /* 🎵 HAPPY BIRTHDAY */
 function mainkanHappyBirthday() {
 
-    const lagu = new Audio(
-        "public/Jamrud%20-%20Selamat%20Ulang%20Tahun%20-%20potong%207%20detik.mp3"
-    );
+    const lagu = new Audio("public/lagu.mp3");
 
     lagu.volume = 1.0;
     lagu.currentTime = 0;
@@ -223,7 +221,7 @@ function mainkanHappyBirthday() {
     lagu.play().catch(error => {
         console.log("Musik tidak dapat diputar:", error);
     });
-}
+  }
 </script>
 </body>
 </html>
